@@ -3,6 +3,7 @@ export const es = {
     projects: 'Proyectos',
     technologies: 'Tecnologías',
     about: 'Sobre mí',
-    contact: 'Contacto'
+    contact: 'Contacto',
+    cv: 'Currículum'
   }
 }

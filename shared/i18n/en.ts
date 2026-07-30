@@ -3,6 +3,7 @@ export const en = {
     projects: 'Projects',
     technologies: 'Tech Stack',
     about: 'About',
-    contact: 'Contact'
+    contact: 'Contact',
+    cv: 'Resume'
   }
 }
