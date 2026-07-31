@@ -1,8 +1,12 @@
+import HeroContent from './components/HeroContent'
+import HeroImage from './components/HeroImage'
+
 const Hero = () => {
   return (
-    <div className='h-screen'>
-      <h1>Hero section</h1>
-    </div>
+    <section id='hero' className='flex h-screen items-center'>
+      <HeroContent />
+      <HeroImage />
+    </section>
   )
 }
 

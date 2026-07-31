@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #070707;
 
   --text-primary: #f5f5f2;
   --text-secondary: #a3a3a3;
@@ -70,6 +70,19 @@
     @apply border-[#C39D73];
     @apply text-[#F5F5F2];
     box-shadow: 0 0 20px rgba(188, 150, 110, 0.15);
+  }
+}
+
+@layer utilities {
+  .luxury-icon {
+    @apply text-text-secondary;
+    @apply transition-all duration-500;
+  }
+
+  .luxury-icon:hover {
+    @apply text-text-primary;
+    transform: translateY(-1px) scale(1.07);
+    filter: drop-shadow(0 0 8px rgba(195, 157, 115, 0.35));
   }
 }
 
