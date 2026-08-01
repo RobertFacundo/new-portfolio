@@ -8,6 +8,7 @@
   --text-secondary: #a3a3a3;
 
   --gold: #c39d73;
+  --gold-muted: #dcc69b;
   --gold-hover: #ffd700;
 
   --border: rgba(195, 157, 115, 0.5);
@@ -18,6 +19,7 @@
   --color-foreground: var(--foreground);
 
   --color-gold: var(--gold);
+  --color-gold-muted: var(--gold-muted);
   --color-gold-hover: var(--gold-hover);
 
   --color-text-primary: var(--text-primary);
@@ -25,8 +27,9 @@
 
   --color-border: var(--border);
 
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-cormorant);
+  --font-body: var(--font-manrope);
+  --font-display: var(--font-geist-mono);
+  --font-brand: var(--font-bodoni);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,8 +40,19 @@
 }
 
 @layer utilities {
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-brand {
+    font-family: var(--font-brand);
+  }
   .luxury-link {
-    @apply relative inline-flex text-text-secondary  transition-colors duration-500 opacity-50;
+    @apply relative inline-flex text-text-secondary  transition-colors duration-500 opacity-50 text-lg;
   }
 
   .luxury-link::after {
@@ -60,7 +74,7 @@
     @apply inline-flex items-center justify-center;
     @apply border border-[#C39D73]/50;
     @apply pl-6 pr-5 py-2;
-    @apply text-sm tracking-wider;
+    @apply text-base tracking-wider;
     @apply text-neutral-400;
     @apply rounded-sm;
     @apply transition-all duration-500;
@@ -71,9 +85,6 @@
     @apply text-[#F5F5F2];
     box-shadow: 0 0 20px rgba(188, 150, 110, 0.15);
   }
-}
-
-@layer utilities {
   .luxury-icon {
     @apply text-text-secondary;
     @apply transition-all duration-500;
@@ -82,12 +93,30 @@
   .luxury-icon:hover {
     @apply text-text-primary;
     transform: translateY(-1px) scale(1.07);
-    filter: drop-shadow(0 0 8px rgba(195, 157, 115, 0.35));
+    filter: drop-shadow(0 0 8px rgba(219, 157, 86, 0.35));
+  }
+  .luxury-highlight {
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0.05rem;
   }
 }
-
 body {
-  background: var(--background);
+  background: #090909;
   color: var(--foreground);
-  font-family: var(--font-inter), sans-serif;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+
+  background: radial-gradient(
+    ellipse at top left,
+    rgba(173, 137, 18, 0.145),
+    transparent 80%
+  );
+
+  z-index: -1;
 }

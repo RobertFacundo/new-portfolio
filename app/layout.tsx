@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono, Inter, Cormorant } from 'next/font/google'
+import { Geist, Geist_Mono, Manrope, Bodoni_Moda } from 'next/font/google'
 import './globals.css'
 
 const geistSans = Geist({
@@ -12,15 +12,16 @@ const geistMono = Geist_Mono({
   subsets: ['latin']
 })
 
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin']
+const manrope = Manrope({
+  variable: '--font-manrope',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700']
 })
 
-const cormorant = Cormorant({
-  variable: '--font-cormorant',
+const bodoni = Bodoni_Moda({
+  variable: '--font-bodoni',
   subsets: ['latin'],
-  weight: ['400', '500', '600']
+  weight: ['400', '500', '600', '700']
 })
 
 export const metadata: Metadata = {
@@ -36,7 +37,7 @@ export default function RootLayout ({
   return (
     <html
       lang='en'
-      className={`${geistSans.variable} ${geistMono.variable}  ${inter.variable} ${cormorant.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable}  ${manrope.variable} ${bodoni.variable} h-full antialiased`}
     >
       <body className='min-h-full flex flex-col'>{children}</body>
     </html>
