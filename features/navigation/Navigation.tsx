@@ -9,7 +9,7 @@ const Navigation = () => {
 
   return (
     <nav className='hidden md:flex fixed top-0 left-0 w-full z-50 flex-row justify-between'>
-      <div className='mx-auto flex w-full max-w-7xl items-center justify-between '>
+      <div className='flex w-full items-center justify-between px-6 md:px-10'>
         <div className='flex items-center'>
           <a href='#hero' className='group flex items-center mt-2'>
             <Image
@@ -23,7 +23,7 @@ const Navigation = () => {
           </a>
         </div>
 
-        <div className='flex items-center gap-12 py-5 tracking-wider '>
+        <div className='flex items-center gap-12 py-5 tracking-wider font-brand'>
           {NAVIGATION_LINKS.map(link => (
             <a
               key={link.href}
@@ -39,7 +39,7 @@ const Navigation = () => {
           href='/cv.pdf'
           target='_blank'
           rel='noopener noreferrer'
-          className='luxury-button '
+          className='luxury-button font-brand'
         >
           {t.navigation.cv}
           <FiExternalLink className='ml-2 text-sm' />
