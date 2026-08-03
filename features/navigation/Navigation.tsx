@@ -2,16 +2,25 @@
 import { NAVIGATION_LINKS } from '@/shared/constants/navigation'
 import { useTranslation } from '@/shared/i18n/useTranslations'
 import { FiExternalLink } from 'react-icons/fi'
+import { useSmoothScroll } from '@/shared/utils/scrollToSection'
 import Image from 'next/image'
 
 const Navigation = () => {
   const { t } = useTranslation()
+  const { scrollTo } = useSmoothScroll()
 
   return (
     <nav className='hidden md:flex fixed top-0 left-0 w-full z-50 flex-row justify-between'>
       <div className='flex w-full items-center justify-between px-6 md:px-10'>
         <div className='flex items-center'>
-          <a href='#hero' className='group flex items-center mt-2'>
+          <a
+            href='#hero'
+            onClick={e => {
+              e.preventDefault()
+              scrollTo('#hero')
+            }}
+            className='group flex items-center mt-2'
+          >
             <Image
               src='/images/logo.png'
               alt='Facundo Robert'
@@ -28,6 +37,10 @@ const Navigation = () => {
             <a
               key={link.href}
               href={link.href}
+              onClick={e => {
+                e.preventDefault()
+                scrollTo(link.href)
+              }}
               className='luxury-link mx-3 px-2'
             >
               {t.navigation[link.key]}

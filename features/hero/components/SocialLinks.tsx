@@ -1,3 +1,4 @@
+import { forwardRef } from 'react'
 import { SOCIAL_LINKS } from '@/shared/constants/socialLinks'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { FiMail } from 'react-icons/fi'
@@ -8,9 +9,9 @@ const icons = {
   mail: FiMail
 }
 
-const SocialLinks = () => {
+const SocialLinks = forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    <div className='flex items-center gap-13 justify-start'>
+    <div ref={ref} className='flex items-center gap-13 justify-start'>
       {SOCIAL_LINKS.map(social => {
         const Icon = icons[social.icon]
 
@@ -28,6 +29,8 @@ const SocialLinks = () => {
       })}
     </div>
   )
-}
+})
+
+SocialLinks.displayName = 'SocialLinks'
 
 export default SocialLinks

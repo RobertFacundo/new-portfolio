@@ -1,12 +1,12 @@
 export const SOCIAL_LINKS = [
   {
     name: 'GitHub',
-    href: 'https://github.com/tuusuario',
+    href: 'https://github.com/RobertFacundo',
     icon: 'github'
   },
   {
     name: 'LinkedIn',
-    href: 'https://linkedin.com/in/tuusuario',
+    href: 'https://www.linkedin.com/in/robertfacundodev/',
     icon: 'linkedin'
   },
   {
