@@ -12,10 +12,10 @@ const HeroContent = () => {
           {t.hero.eyebrow}
         </span>
 
-        <h1 className='font-display text-[110px] leading-[0.8] text-text-primary ml-1'>
-          FACUNDO
+        <h1 className='font-display text-[100px] leading-[0.8] text-text-primary ml-1 tracking-wide'>
+          Facundo
           <br />
-          ROBERT
+          Robert
         </h1>
       </div>
 
@@ -23,7 +23,7 @@ const HeroContent = () => {
         {t.hero.subtitle}
       </h2>
 
-      <p className='font-body text-text-secondary mb-5 tracking-wide leading-6 text-lg w-[540px]'>
+      <p className='font-body text-text-secondary mb-5 tracking-wider leading-6 text-lg w-[540px]'>
         {t.hero.paragraph}
       </p>
       <Buttons />
