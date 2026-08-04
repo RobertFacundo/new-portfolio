@@ -3,11 +3,17 @@ import { NAVIGATION_LINKS } from '@/shared/constants/navigation'
 import { useTranslation } from '@/shared/i18n/useTranslations'
 import { FiExternalLink } from 'react-icons/fi'
 import { useSmoothScroll } from '@/shared/utils/scrollToSection'
+import { useRef } from 'react'
+import { useLanguageTransition } from '@/shared/hooks/useLanguageTransition'
 import Image from 'next/image'
+import Links from './Links'
 
 const Navigation = () => {
   const { t } = useTranslation()
   const { scrollTo } = useSmoothScroll()
+  const languageRefs = useRef<(HTMLElement | null)[]>([])
+
+  useLanguageTransition({ refs: languageRefs })
 
   return (
     <nav className='hidden md:flex fixed top-0 left-0 w-full z-50 flex-row justify-between'>
@@ -32,21 +38,7 @@ const Navigation = () => {
           </a>
         </div>
 
-        <div className='flex items-center gap-12 py-5 tracking-wider font-brand'>
-          {NAVIGATION_LINKS.map(link => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={e => {
-                e.preventDefault()
-                scrollTo(link.href)
-              }}
-              className='luxury-link mx-3 px-2'
-            >
-              {t.navigation[link.key]}
-            </a>
-          ))}
-        </div>
+        <Links refs={languageRefs} />
 
         <a
           href='/cv.pdf'
@@ -54,7 +46,13 @@ const Navigation = () => {
           rel='noopener noreferrer'
           className='luxury-button font-brand'
         >
-          {t.navigation.cv}
+          <span
+            ref={el => {
+              languageRefs.current[NAVIGATION_LINKS.length] = el
+            }}
+          >
+            {t.navigation.cv}
+          </span>
           <FiExternalLink className='ml-2 text-sm' />
         </a>
       </div>
