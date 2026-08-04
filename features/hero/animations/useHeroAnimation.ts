@@ -12,6 +12,10 @@ export const useHeroAnimation = ({
 }: any) => {
   useGSAP(
     () => {
+      gsap.set(container.current, {
+        visibility: 'visible'
+      })
+
       const tl = gsap.timeline({
         defaults: {
           ease: 'expo.Out'
