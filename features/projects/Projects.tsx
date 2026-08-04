@@ -1,8 +1,11 @@
+import ProjectsSection from './components/ProjectsSection'
+
 const Projects = () => {
   return (
-    <div id='projects' className='h-screen'>
+    <section id='projects' className='min-h-screen'>
       <h1>Projects section</h1>
-    </div>
+      <ProjectsSection />
+    </section>
   )
 }
 
