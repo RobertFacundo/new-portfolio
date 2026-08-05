@@ -100,6 +100,25 @@
     font-weight: 400;
     letter-spacing: 0.05rem;
   }
+
+  .luxury-card {
+    @apply relative overflow-hidden rounded-lg;
+    @apply border border-[#C39D73]/10;
+    @apply transition-all duration-700;
+
+    box-shadow: 0 0 30px rgba(195, 158, 115, 0.07),
+      inset 0 0 20px rgba(195, 157, 115, 0.03);
+
+    background: linear-gradient(
+      145deg,
+      rgba(195, 157, 115, 0.05),
+      rgba(255, 255, 255, 0.02)
+    );
+  }
+
+  .luxury-card:hover {
+    @apply border-[#C39D73]/30;
+  }
 }
 
 body {
@@ -124,4 +143,15 @@ body::before {
 
 .hero-content {
   visibility: hidden;
+}
+
+.background-card {
+  background: #0d0d0e;
+  background: linear-gradient(
+    242deg,
+    rgb(10, 10, 10) 0%,
+    rgb(14, 14, 15) 22%,
+    rgb(16, 16, 16) 47%,
+    rgb(19, 18, 18) 79%
+  );
 }

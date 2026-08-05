@@ -1,4 +1,4 @@
-export type ProjectType = 'landing' | 'ecommerce' | 'web-app'
+export type ProjectType = 'Landing' | 'E-commerce' | 'web-app'
 
 export interface Project {
   id: string
@@ -7,6 +7,6 @@ export interface Project {
   title: string
   description: string
   techStack: string[]
-  github?: string
-  live?: string
+  github: string
+  live: string
 }
