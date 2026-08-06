@@ -1,4 +1,3 @@
-import { CgMathPlus, CgMathMinus } from 'react-icons/cg'
 import { cn } from '@/shared/lib/classes'
 import { CgArrowsExchange } from 'react-icons/cg'
 
