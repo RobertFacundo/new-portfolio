@@ -1,45 +1,48 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, forwardRef } from 'react'
 import { PROJECTS } from '@/shared/constants/projects'
-import ProjectCard from './ProjectCard'
-import { ScrollTrigger } from '@/shared/lib/gsap'
-import { refreshLenis } from '@/shared/lib/lenis'
+import ProjectStack from './ProjectStack'
+import { splitIntoColumns } from '../utils/splitColumns'
 
-const ProjectsSection = () => {
-  const [showMore, setShowMore] = useState(false)
+interface Props {
+  open: boolean
+}
 
-  const firstProjects = PROJECTS.slice(0, 3)
-  const extraProjects = PROJECTS.slice(3)
-
-  useEffect(() => {
-    refreshLenis()
-    ScrollTrigger.refresh()
-  }, [showMore])
+const ProjectsSection = forwardRef<HTMLDivElement, Props>(({ open }, ref) => {
+  const columns = splitIntoColumns(PROJECTS, 3)
 
   return (
-    <div>
-      <div className='grid grid-cols-3 gap-2 mt-10 ml-5'>
-        {firstProjects.map(project => (
-          <ProjectCard key={project.id} project={project} />
+    <div ref={ref} className='mt-10 ml-10'>
+      <div className='grid grid-cols-3 gap-2'>
+        {columns.map((column, index) => (
+          <ProjectStack key={index} projects={column} open={open} />
         ))}
-
-        {showMore &&
-          extraProjects.map(project => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
       </div>
 
-      {extraProjects.length > 0 && (
-        <button
-          onClick={() => setShowMore(prev => !prev)}
-          className='mx-auto cursor-pointer w-full font-brand tracking-widest text-gold'
-        >
-          {showMore ? 'Show Less' : 'View More'}
-        </button>
-      )}
+      {/* <button
+        onClick={() => setOpen(prev => !prev)}
+        className='
+          mx-auto mt-1
+          flex items-center justify-center gap-3
+          w-full
+          font-brand
+          tracking-widest
+          text-gold
+          cursor-pointer
+        '
+      >
+        <CgChevronDoubleDown
+          className={cn(
+            'transition-transform duration-700',
+            !open && 'rotate-180'
+          )}
+        />
+      </button> */}
     </div>
   )
-}
+})
+
+ProjectsSection.displayName = 'ProjectsSection'
 
 export default ProjectsSection

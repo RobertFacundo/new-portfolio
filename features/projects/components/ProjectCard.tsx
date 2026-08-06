@@ -1,13 +1,17 @@
 import { Project } from '../types/project'
 import ProjectPreview from './ProjectPreview'
+import { forwardRef } from 'react'
 
 interface Props {
   project: Project
 }
 
-const ProjectCard = ({ project }: Props) => {
+const ProjectCard = forwardRef<HTMLElement, Props>(({ project }, ref) => {
   return (
-    <article className='luxury-card group flex flex-col w-[440px] pt-3 mb-5'>
+    <article
+      ref={ref}
+      className='luxury-card group flex flex-col w-[440px] pt-3 mb-5'
+    >
       <ProjectPreview project={project} />
 
       <div className='flex flex-col gap-1 justify-center pl-4 pb-3'>
@@ -34,6 +38,6 @@ const ProjectCard = ({ project }: Props) => {
       </div>
     </article>
   )
-}
+})
 
 export default ProjectCard
