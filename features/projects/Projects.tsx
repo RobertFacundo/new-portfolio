@@ -1,12 +1,27 @@
+'use client'
+import { useRef, useState } from 'react'
 import ProjectsSection from './components/ProjectsSection'
+import { useProjectsAnimations } from './animations/useProjectsAnimations'
+import SectionHeader from './components/SectionHeader'
 
 const Projects = () => {
+  const [open, setOpen] = useState(false)
+  const titleRef = useRef<HTMLHeadingElement | null>(null)
+  const projectsRef = useRef<HTMLDivElement | null>(null)
+
+  useProjectsAnimations({
+    titleRef,
+    projectsRef
+  })
+
   return (
-    <section id='projects' className='border-t border-gold/10 pt-10 '>
-      <h1 className=' relative ml-5 font-brand text-xs uppercase tracking-[0.5em] text-gold pb-3 border-b  border-gold/40 w-fit'>
-        Personal Projects
-      </h1>
-      <ProjectsSection />
+    <section id='projects' className='border-t border-b border-gold/10 py-10  '>
+      <SectionHeader
+        title='Personal Projects'
+        open={open}
+        onToggle={() => setOpen(prev => !prev)}
+      />
+      <ProjectsSection open={open} ref={projectsRef} />
     </section>
   )
 }
