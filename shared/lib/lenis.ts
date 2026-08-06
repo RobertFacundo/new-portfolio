@@ -9,3 +9,7 @@ export const setLenis = (instance: Lenis) => {
 export const getLenis = () => {
   return lenis
 }
+
+export const refreshLenis = () => {
+  lenis?.resize()
+}
