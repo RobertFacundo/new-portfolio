@@ -4,9 +4,14 @@ import ProjectLinks from './ProjectLinks'
 
 interface Props {
   project: Project
+  text: {
+    type: string
+    title: string
+    description: string
+  }
 }
 
-const ProjectPreview = ({ project }: Props) => {
+const ProjectPreview = ({ project, text }: Props) => {
   return (
     <div className='relative mx-auto w-[390px] rounded-[24px]'>
       <ProjectLinks github={project.github} live={project.live} />
@@ -14,7 +19,7 @@ const ProjectPreview = ({ project }: Props) => {
       <div className='overflow-hidden rounded-[24px]'>
         <Image
           src={project.image}
-          alt={project.title}
+          alt={text.title}
           width={450}
           height={300}
           className='h-auto w-full object-cover'
@@ -23,7 +28,7 @@ const ProjectPreview = ({ project }: Props) => {
 
       <div className='mt-2 flex justify-end'>
         <span className='font-brand text-xs uppercase tracking-[0.25em] text-gold'>
-          {project.type}
+          {text.type}
         </span>
       </div>
     </div>
