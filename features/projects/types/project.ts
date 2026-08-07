@@ -1,11 +1,14 @@
-export type ProjectType = 'Landing' | 'E-commerce' | 'web-app'
+export type ProjectId =
+  | 'vinyl-store'
+  | 'travel-landing'
+  | 'book-store'
+  | 'christmas-landing'
+  | 'halloween-landing'
+  | 'flower-delivery'
 
 export interface Project {
-  id: string
-  type: ProjectType
+  id: ProjectId
   image: string
-  title: string
-  description: string
   techStack: string[]
   github: string
   live: string

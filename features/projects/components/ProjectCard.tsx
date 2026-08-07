@@ -1,3 +1,4 @@
+import { useTranslation } from '@/shared/i18n/useTranslations'
 import { Project } from '../types/project'
 import ProjectPreview from './ProjectPreview'
 import { forwardRef } from 'react'
@@ -7,21 +8,23 @@ interface Props {
 }
 
 const ProjectCard = forwardRef<HTMLElement, Props>(({ project }, ref) => {
+  const { t } = useTranslation()
+  const text = t.projects.items[project.id]
   return (
     <article
       ref={ref}
       className='luxury-card group flex flex-col w-[440px] pt-3 mb-5'
     >
-      <ProjectPreview project={project} />
+      <ProjectPreview project={project} text={text} />
 
       <div className='flex flex-col gap-1 justify-center pl-4 pb-3'>
         <div className='flex flex-col gap-1'>
           <h3 className='font-display text-3xl tracking-widest text-text-primary '>
-            {project.title}
+            {text.title}
           </h3>
 
           <p className='text-text-secondary font-body text-sm tracking-wider'>
-            {project.description}
+            {text.description}
           </p>
         </div>
 
