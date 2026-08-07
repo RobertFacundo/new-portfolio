@@ -1,5 +1,6 @@
 import { cn } from '@/shared/lib/classes'
 import { CgArrowsExchange } from 'react-icons/cg'
+import { forwardRef } from 'react'
 
 interface SectionHeaderProps {
   title: string
@@ -7,11 +8,13 @@ interface SectionHeaderProps {
   onToggle?: () => void
 }
 
-const SectionHeader = ({ title, open, onToggle }: SectionHeaderProps) => {
-  return (
-    <div className='flex w-full items-center justify-between px-5'>
-      <h1
-        className='
+const SectionHeader = forwardRef<HTMLHeadingElement, SectionHeaderProps>(
+  ({ title, open, onToggle }, ref) => {
+    return (
+      <div className='flex w-full items-center justify-between px-5'>
+        <h1
+          ref={ref}
+          className='
           font-brand
           text-xs
           uppercase
@@ -21,14 +24,14 @@ const SectionHeader = ({ title, open, onToggle }: SectionHeaderProps) => {
           border-b
           border-gold/40
         '
-      >
-        {title}
-      </h1>
+        >
+          {title}
+        </h1>
 
-      {onToggle && (
-        <button
-          onClick={onToggle}
-          className='
+        {onToggle && (
+          <button
+            onClick={onToggle}
+            className='
             flex
             items-center
             justify-center
@@ -40,17 +43,18 @@ const SectionHeader = ({ title, open, onToggle }: SectionHeaderProps) => {
             duration-700
             hover:scale-110
           '
-        >
-          <CgArrowsExchange
-            className={cn(
-              'transition-transform duration-500',
-              open && 'rotate-180'
-            )}
-          />
-        </button>
-      )}
-    </div>
-  )
-}
+          >
+            <CgArrowsExchange
+              className={cn(
+                'transition-transform duration-500',
+                open && 'rotate-180'
+              )}
+            />
+          </button>
+        )}
+      </div>
+    )
+  }
+)
 
 export default SectionHeader

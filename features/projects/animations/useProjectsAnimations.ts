@@ -43,16 +43,18 @@ export const useProjectsAnimations = ({ titleRef, projectsRef }: Props) => {
       cards,
       {
         opacity: 0,
-        scale: 0.75
+        scale: 0.75,
+        filter: 'blur(6px)'
       },
       {
         opacity: 1,
         scale: 1,
+        filter: 'blur(0px)',
         duration: 1.2,
-        stagger: 0.15,
-        ease: 'power3.out'
+        stagger: 0.65,
+        ease: 'expo.inOut'
       },
-      '-=0.3'
+      '-=0.4'
     )
   }, [])
 }
