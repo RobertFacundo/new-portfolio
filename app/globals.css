@@ -119,6 +119,10 @@
   .luxury-card:hover {
     @apply border-[#C39D73]/30;
   }
+
+  .luxury-title {
+    @apply font-brand text-xs uppercase tracking-[0.5em] text-gold pb-3 border-b border-gold/40;
+  }
 }
 
 body {
