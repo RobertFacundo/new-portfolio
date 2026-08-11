@@ -7,7 +7,7 @@ const TechSection = () => {
       {TECHNOLOGIES.map(category => (
         <TechColumn
           key={category.id}
-          title={category.title}
+          category={category.id}
           technologies={category.items}
         />
       ))}

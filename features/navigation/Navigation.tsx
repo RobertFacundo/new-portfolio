@@ -51,7 +51,7 @@ const Navigation = () => {
               languageRefs.current[NAVIGATION_LINKS.length] = el
             }}
           >
-            {t.navigation.cv}
+            {t('navigation.cv')}
           </span>
           <FiExternalLink className='ml-2 text-sm' />
         </a>
