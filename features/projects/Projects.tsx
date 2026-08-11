@@ -15,7 +15,7 @@ const Projects = () => {
   })
 
   return (
-    <section id='projects' className='border-t border-b border-gold/10 py-10  '>
+    <section id='projects' className='border-t border-gold/10 py-10  '>
       <SectionHeader
         ref={titleRef}
         title='Personal Projects'

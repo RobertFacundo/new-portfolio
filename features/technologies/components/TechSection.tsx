@@ -1,9 +1,10 @@
 import { TECHNOLOGIES } from '@/shared/constants/techStack'
 import TechColumn from './TechColumn'
+import { forwardRef } from 'react'
 
-const TechSection = () => {
+const TechSection = forwardRef<HTMLDivElement>((_, ref) => {
   return (
-    <div className='grid grid-cols-3 gap-2'>
+    <div ref={ref} className='grid grid-cols-3 gap-2'>
       {TECHNOLOGIES.map(category => (
         <TechColumn
           key={category.id}
@@ -13,6 +14,8 @@ const TechSection = () => {
       ))}
     </div>
   )
-}
+})
+
+TechSection.displayName = 'TechSection'
 
 export default TechSection
