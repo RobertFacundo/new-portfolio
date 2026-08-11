@@ -45,7 +45,7 @@ export const TECHNOLOGIES = [
       { name: 'GSAP', logo: '/images/techStack/gsap.svg', hideName: true },
       { name: 'Three.js', icon: SiThreedotjs },
       { name: 'OpenAI', logo: '/images/techStack/openAi.svg' },
-      { name: 'Lenis', logo: '/images/techStack/lenis.png' }
+      { name: 'Lenis', logo: '/images/techStack/lenisScroll.png' }
     ]
   },
   {

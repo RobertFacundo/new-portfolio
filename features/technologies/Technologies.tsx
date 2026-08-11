@@ -2,7 +2,10 @@ import TechSection from './components/TechSection'
 
 const Technologies = () => {
   return (
-    <section className='border-t border-b border-gold/10 py-10'>
+    <section
+      id='technologies'
+      className='border-t border-b border-gold/10 py-10'
+    >
       <h1
         className='
          luxury-title
