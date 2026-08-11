@@ -35,7 +35,7 @@ const HeroContent = () => {
           ref={eyebrow}
           className='font-brand text-[12px] tracking-[0.3em] text-gold uppercase font-bold'
         >
-          {t.hero.eyebrow}
+          {t('hero.eyebrow')}
         </span>
 
         <h1
@@ -52,14 +52,14 @@ const HeroContent = () => {
         ref={subtitle}
         className='text-gold text-[11px] font-bold tracking-widest uppercase font-brand'
       >
-        {t.hero.subtitle}
+        {t('hero.subtitle')}
       </h2>
 
       <p
         ref={paragraph}
         className='font-body text-text-secondary mb-5 tracking-wider leading-6 text-lg w-[540px]'
       >
-        {t.hero.paragraph}
+        {t('hero.paragraph')}
       </p>
       <Buttons ref={buttons} />
       <SocialLinks ref={social} />

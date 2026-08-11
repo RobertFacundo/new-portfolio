@@ -5,7 +5,11 @@ import { useLanguageStore } from '../stores/language.store'
 export const useTranslation = () => {
   const language = useLanguageStore(state => state.language)
 
-  return {
-    t: translations[language]
+  const t = (key: string) => {
+    return key.split('.').reduce((value, part) => {
+      return value?.[part]
+    }, translations[language] as any)
   }
+
+  return { t }
 }

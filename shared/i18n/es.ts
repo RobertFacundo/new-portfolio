@@ -60,5 +60,13 @@ export const es = {
           'Un ecommerce moderno inspirado en un diseño de Figma, centrado en una interfaz responsive e interacciones fluidas.'
       }
     }
+  },
+  techStack: {
+    title: 'Stack Tecnológico',
+    categories: {
+      frontend: 'Frontend',
+      libraries: 'Librerías y Herramientas',
+      backend: 'Backend y Datos'
+    }
   }
 }

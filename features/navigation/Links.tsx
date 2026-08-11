@@ -27,7 +27,7 @@ const Links = ({ refs }: Props) => {
           }}
           className='luxury-link mx-3 px-2'
         >
-          {t.navigation[link.key]}
+          {t(`navigation.${link.key}`)}
         </a>
       ))}
     </div>

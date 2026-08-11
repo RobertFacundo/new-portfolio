@@ -1,6 +1,9 @@
+'use client'
+import { useTranslation } from '@/shared/i18n/useTranslations'
 import TechSection from './components/TechSection'
 
 const Technologies = () => {
+  const { t } = useTranslation()
   return (
     <section
       id='technologies'
@@ -14,7 +17,7 @@ const Technologies = () => {
          mb-2
         '
       >
-        Tech Stack
+        {t('techStack.title')}
       </h1>
       <TechSection />
     </section>

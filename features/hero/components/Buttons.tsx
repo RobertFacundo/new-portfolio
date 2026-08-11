@@ -7,9 +7,9 @@ const Buttons = forwardRef<HTMLDivElement>((_, ref) => {
 
   return (
     <div ref={ref} className='flex flex-row gap-3 justify-start font-brand'>
-      <CTAButton href='#projects'>{t.hero.viewProjects}</CTAButton>
+      <CTAButton href='#projects'>{t('hero.viewProjects')}</CTAButton>
 
-      <CTAButton href='#contact'>{t.hero.contactMe}</CTAButton>
+      <CTAButton href='#contact'>{t('hero.contactMe')}</CTAButton>
     </div>
   )
 })
