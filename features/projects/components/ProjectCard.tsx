@@ -9,7 +9,7 @@ interface Props {
 
 const ProjectCard = forwardRef<HTMLElement, Props>(({ project }, ref) => {
   const { t } = useTranslation()
-  const text = t.projects.items[project.id]
+  const text = t(`projects.items.${project.id}`)
   return (
     <article
       ref={ref}
