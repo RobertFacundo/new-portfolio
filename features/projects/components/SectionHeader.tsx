@@ -15,14 +15,7 @@ const SectionHeader = forwardRef<HTMLHeadingElement, SectionHeaderProps>(
         <h1
           ref={ref}
           className='
-          font-brand
-          text-xs
-          uppercase
-          tracking-[0.5em]
-          text-gold
-          pb-3
-          border-b
-          border-gold/40
+         luxury-title
         '
         >
           {title}

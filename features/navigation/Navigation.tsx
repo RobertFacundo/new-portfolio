@@ -16,7 +16,7 @@ const Navigation = () => {
   useLanguageTransition({ refs: languageRefs })
 
   return (
-    <nav className='hidden md:flex fixed top-0 left-0 w-full z-50 flex-row justify-between'>
+    <nav className='hidden md:flex fixed top-0 left-0 w-full z-50 flex-row justify-between  bg-[#0a0a0a]/60 backdrop-blur-sm'>
       <div className='flex w-full items-center justify-between px-6 md:px-10'>
         <div className='flex items-center'>
           <a
