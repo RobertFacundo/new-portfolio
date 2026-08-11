@@ -8,34 +8,25 @@ interface ProjectStackProps {
 }
 
 const ProjectStack = ({ projects, open }: ProjectStackProps) => {
-  const first = projects[0]
-  const second = projects[1]
-
   return (
     <div className='relative h-[400px] overflow-hidden'>
-      {first && (
+      {projects.map((project, index) => (
         <div
+          key={project.id}
           className={cn(
             'absolute inset-0 transition-all duration-700 ease-out',
-            open ? 'scale-75 opacity-0' : 'scale-100 opacity-100'
-          )}
-        >
-          <ProjectCard project={first} />
-        </div>
-      )}
-
-      {second && (
-        <div
-          className={cn(
-            'absolute inset-0 transition-all duration-700 ease-out',
-            open
+            index === 0
+              ? open
+                ? 'scale-75 opacity-0'
+                : 'scale-100 opacity-100'
+              : open
               ? 'translate-y-0 opacity-100 scale-100'
               : 'translate-y-full opacity-0 scale-75'
           )}
         >
-          <ProjectCard project={second} />
+          <ProjectCard project={project} />
         </div>
-      )}
+      ))}
     </div>
   )
 }
