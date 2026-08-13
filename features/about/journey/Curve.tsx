@@ -5,9 +5,6 @@ const Curve = () => {
   const points = getCurvePoints(JOURNEY_MILESTONES)
   const path = getCurvePath(points)
 
-  console.log('points:', points)
-  console.log('path:', path)
-
   return (
     <>
       <defs>

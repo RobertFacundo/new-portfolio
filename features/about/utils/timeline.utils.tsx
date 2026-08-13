@@ -26,7 +26,7 @@ export const getMilestoneX = (index: number, total: number) => {
   }
 
   const start = TIMELINE.xStart + TIMELINE.milestonePadding
-  const end = TIMELINE.xEnd - TIMELINE.milestonePadding
+  const end = TIMELINE.xEnd - TIMELINE.milestonePaddingRight
 
   const spacing = (end - start) / (total - 1)
 
@@ -80,6 +80,11 @@ export const getCurvePoints = (
 /* Curve generation                                                           */
 /* -------------------------------------------------------------------------- */
 
+const getVariation = (index: number) => {
+  const value = Math.sin(index * 12.9898) * 43758.5453
+
+  return value - Math.floor(value)
+}
 export const getCurvePath = (points: readonly CurvePoint[]) => {
   if (points.length === 0) return ''
 
@@ -96,19 +101,62 @@ export const getCurvePath = (points: readonly CurvePoint[]) => {
     const distanceX = next.x - current.x
     const distanceY = next.y - current.y
 
-    const controlX = distanceX * 0.35
+    const verticalChange = Math.abs(distanceY)
+
+    const variation = getVariation(i)
+
+    const horizontalTension = 0.3 + variation * 0.2
+    const verticalInfluence = Math.min(
+      verticalChange * (0.35 + variation * 0.3),
+      distanceX * 0.4
+    )
 
     const direction = Math.sign(distanceY)
 
-    const controlY = Math.abs(distanceY) * 0.35
+    const controlX = distanceX * horizontalTension
+
+    const controlY = verticalInfluence * direction
 
     path += `
       C
-      ${current.x + controlX} ${current.y + controlY * direction},
-      ${next.x - controlX} ${next.y - controlY * direction},
+      ${current.x + controlX} ${current.y + controlY},
+      ${next.x - controlX} ${next.y - controlY},
       ${next.x} ${next.y}
     `
   }
 
   return path
+}
+
+export const getMilestoneLabelPosition = (
+  progress: number
+): 'top' | 'bottom' => {
+  return progress >= 50 ? 'top' : 'bottom'
+}
+
+export const splitPreview = (text: string, maxLength = 28) => {
+  const words = text.split(' ')
+  const lines: string[] = []
+  let currentLine = ''
+
+  for (const word of words) {
+    const nextLine = currentLine ? `${currentLine} ${word}` : word
+
+    if (nextLine.length > maxLength) {
+      lines.push(currentLine)
+      currentLine = word
+    } else {
+      currentLine = nextLine
+    }
+  }
+
+  if (currentLine) {
+    lines.push(currentLine)
+  }
+
+  return lines.slice(0, 2)
+}
+
+export const getMilestoneLabelY = (position: 'top' | 'bottom') => {
+  return position === 'top' ? TIMELINE.yBottom - 110 : TIMELINE.yTop + 40
 }

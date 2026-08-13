@@ -2,6 +2,7 @@ import Axes from './Axes'
 import Curve from './Curve'
 import Labels from './Labels'
 import Milestones from './Milestone'
+import MilestoneLabels from './MilestoneLabels'
 
 const Timeline = () => {
   return (
@@ -14,6 +15,7 @@ const Timeline = () => {
         <Axes />
         <Curve />
         <Milestones />
+        <MilestoneLabels />
       </svg>
 
       <Labels />
