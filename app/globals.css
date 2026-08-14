@@ -125,8 +125,16 @@
   }
 
   .luxury-milestone-card {
-    @apply relative flex h-full w-full flex-col gap-1
-    rounded-xl border border-gold bg-black px-3 py-2;
+    @apply relative flex flex-row items-center h-full w-full flex-col gap-1
+    rounded-xl border border-gold  px-3 py-2;
+
+    background: linear-gradient(
+      145deg,
+      rgba(29, 24, 11, 0.988),
+      rgba(24, 20, 12, 0.988),
+      rgba(19, 17, 9, 0.988),
+      rgba(6, 6, 6, 0.984)
+    );
   }
 
   .luxury-milestone-card-top::after {
@@ -161,6 +169,12 @@
     border-top: 1px solid var(--gold);
 
     transform: translateX(-50%) rotate(45deg);
+  }
+  .milestone-pointer-top {
+    background: linear-gradient(145deg, #1a160c, #19140b, #19150c, #1a160c);
+  }
+  .milestone-pointer-bottom {
+    background: linear-gradient(top, #14120a, #14120af6, #14120ae8, #14120ac0);
   }
 }
 

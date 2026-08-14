@@ -17,13 +17,13 @@ const MilestonePointer = ({ position }: PointerProps) => {
         rotate-45
         border
         border-gold
-        bg-black
         ${isTop ? '-top-2' : '-bottom-2'}
         ${
           isTop
             ? 'border-r-transparent border-b-transparent'
             : 'border-l-transparent border-t-transparent'
         }
+         ${isTop ? 'milestone-pointer-top' : 'bg-[#14120A]'}
       `}
     />
   )

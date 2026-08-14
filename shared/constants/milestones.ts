@@ -5,6 +5,7 @@ export interface JourneyMilestone {
   preview: string
   description: string
   progress: number
+  image: string
 }
 
 export const JOURNEY_MILESTONES: JourneyMilestone[] = [
@@ -15,7 +16,8 @@ export const JOURNEY_MILESTONES: JourneyMilestone[] = [
     preview: 'Learning the fundamentals.',
     description:
       'The journey begins. I entered the world of software development through full-stack training, building my foundations in HTML, CSS, React, Node.js, and backend development.',
-    progress: 20
+    progress: 20,
+    image: '/images/about/compass.png'
   },
   {
     id: 'exploration',
@@ -24,7 +26,8 @@ export const JOURNEY_MILESTONES: JourneyMilestone[] = [
     preview: 'Turning knowledge into projects.',
     description:
       'The course was only the beginning. I started building personal projects, experimenting with different technologies and turning knowledge into practical experience.',
-    progress: 41
+    progress: 41,
+    image: '/images/about/compass.png'
   },
   {
     id: 'focus',
@@ -33,6 +36,7 @@ export const JOURNEY_MILESTONES: JourneyMilestone[] = [
     preview: 'Choosing frontend, refining my craft.',
     description:
       'I chose a direction. My journey shifted toward frontend development, creating increasingly refined digital experiences while preparing to enter the professional world.',
-    progress: 77
+    progress: 77,
+    image: '/images/about/compass.png'
   }
 ]

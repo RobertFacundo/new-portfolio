@@ -19,9 +19,9 @@ const MilestoneCards = () => {
         return (
           <foreignObject
             key={point.id}
-            x={point.x - 60}
+            x={point.x - 100}
             y={cardY}
-            width={220}
+            width={300}
             height={173}
           >
             <div className='h-full w-full py-3'>
