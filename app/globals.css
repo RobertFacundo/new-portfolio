@@ -123,6 +123,45 @@
   .luxury-title {
     @apply font-brand text-xs uppercase tracking-[0.5em] text-gold pb-3 border-b border-gold/40;
   }
+
+  .luxury-milestone-card {
+    @apply relative flex h-full w-full flex-col gap-1
+    rounded-xl border border-gold bg-black px-3 py-2;
+  }
+
+  .luxury-milestone-card-top::after {
+    content: '';
+    position: absolute;
+
+    left: 50%;
+    bottom: -8px;
+
+    width: 16px;
+    height: 16px;
+
+    background: black;
+    border-right: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  .luxury-milestone-card-bottom::after {
+    content: '';
+    position: absolute;
+
+    left: 50%;
+    top: -8px;
+
+    width: 16px;
+    height: 16px;
+
+    background: black;
+    border-left: 1px solid var(--gold);
+    border-top: 1px solid var(--gold);
+
+    transform: translateX(-50%) rotate(45deg);
+  }
 }
 
 body {
