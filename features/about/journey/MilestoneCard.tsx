@@ -1,3 +1,5 @@
+'use client'
+import { useJourneyStore } from '@/shared/stores/useJourneyStore'
 import type { MilestonePoint } from '../utils/timeline.utils'
 import MilestonePointer from './MilestonePointer'
 import Image from 'next/image'
@@ -8,10 +10,18 @@ interface Props {
 }
 
 const MilestoneCard = ({ point, position }: Props) => {
+  const hoveredMilestoneId = useJourneyStore(state => state.hoveredMilestoneId)
+  const isHovered = hoveredMilestoneId === point.id
   const isTop = position === 'top'
 
   return (
-    <div className='relative h-full w-full '>
+    <div
+      className={`
+    relative h-full w-full
+    transition-opacity duration-1000
+    ${isHovered ? 'opacity-100' : 'opacity-0'}
+  `}
+    >
       {/* Pointer */}
       <MilestonePointer position={position} />
 
@@ -23,9 +33,9 @@ const MilestoneCard = ({ point, position }: Props) => {
             ${isTop ? 'rounded-xl' : 'rounded-xl'}
             `}
       >
-        <Image src={point.image} alt='' width={90} height={90} />
+        <Image src={point.image} alt='' width={80} height={80} />
         <div className='flex flex-col w-2/3 gap-1 mx-auto'>
-          <span className='text-[#EFBF73] font-brand text-[9px]'>
+          <span className='text-[#EFBF73] font-brand text-[9px] text-right tracking-widest'>
             {point.date}
           </span>
 
@@ -33,7 +43,7 @@ const MilestoneCard = ({ point, position }: Props) => {
             {point.title}
           </h2>
 
-          <p className='text-[#bebaba] font-body text-[9px] tracking-widest text-left w-full'>
+          <p className='text-[#bebaba] font-body text-[9px] tracking-widest text-left w-full pl-1'>
             {point.description}
           </p>
         </div>

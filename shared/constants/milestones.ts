@@ -17,7 +17,7 @@ export const JOURNEY_MILESTONES: JourneyMilestone[] = [
     description:
       'The journey begins. I entered the world of software development through full-stack training, building my foundations in HTML, CSS, React, Node.js, and backend development.',
     progress: 20,
-    image: '/images/about/compass.png'
+    image: '/images/about/brickwall.png'
   },
   {
     id: 'exploration',
@@ -27,7 +27,7 @@ export const JOURNEY_MILESTONES: JourneyMilestone[] = [
     description:
       'The course was only the beginning. I started building personal projects, experimenting with different technologies and turning knowledge into practical experience.',
     progress: 41,
-    image: '/images/about/compass.png'
+    image: '/images/about/exploration.png'
   },
   {
     id: 'focus',
@@ -37,6 +37,6 @@ export const JOURNEY_MILESTONES: JourneyMilestone[] = [
     description:
       'I chose a direction. My journey shifted toward frontend development, creating increasingly refined digital experiences while preparing to enter the professional world.',
     progress: 77,
-    image: '/images/about/compass.png'
+    image: '/images/about/dartboard.png'
   }
 ]
