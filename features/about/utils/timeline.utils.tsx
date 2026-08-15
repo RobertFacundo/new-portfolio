@@ -160,3 +160,7 @@ export const splitPreview = (text: string, maxLength = 28) => {
 export const getMilestoneLabelY = (position: 'top' | 'bottom') => {
   return position === 'top' ? TIMELINE.yBottom - 110 : TIMELINE.yTop + 40
 }
+
+export const getMilestoneCardY = (position: 'top' | 'bottom') => {
+  return position === 'top' ? TIMELINE.yTop : TIMELINE.yBottom
+}
