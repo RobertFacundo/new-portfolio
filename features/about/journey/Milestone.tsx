@@ -12,6 +12,7 @@ const Milestones = () => {
     <>
       {points.map(point => (
         <MilestoneDot
+          id={point.id}
           key={point.id}
           x={point.x}
           y={point.y}

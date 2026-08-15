@@ -1,19 +1,33 @@
+'use client'
 import { TIMELINE } from '@/shared/constants/timeline'
+import { useJourneyStore } from '@/shared/stores/useJourneyStore'
 
 interface Props {
   x: number
   y: number
   position: 'top' | 'bottom'
+  id: string
 }
 
-const MilestoneDot = ({ x, y, position }: Props) => {
+const MilestoneDot = ({ id, x, y, position }: Props) => {
+  const setHoveredMilestoneId = useJourneyStore(
+    state => state.setHoveredMilestone
+  )
+  const hoveredMilestoneId = useJourneyStore(state => state.hoveredMilestoneId)
+  const isHovered = hoveredMilestoneId === id
   const labelY =
     position === 'top' ? TIMELINE.yBottom - 140 : TIMELINE.yTop + 100
 
   const lineEndY = labelY - y
 
   return (
-    <g transform={`translate(${x} ${y})`}>
+    <g
+      transform={`translate(${x} ${y})`}
+      onMouseEnter={() => setHoveredMilestoneId(id)}
+      onMouseLeave={() => setHoveredMilestoneId('focus')}
+      cursor='pointer'
+    >
+      <circle cx='0' cy='0' r='22' fill='transparent' />
       <line
         x1='0'
         y1='0'
@@ -22,7 +36,8 @@ const MilestoneDot = ({ x, y, position }: Props) => {
         stroke='#EFBF73'
         strokeWidth='1.2'
         strokeDasharray='4 3'
-        opacity='0.45'
+        opacity={isHovered ? 0 : 0.45}
+        className='transition-opacity duration-900'
       />
       <defs>
         <filter
@@ -61,6 +76,28 @@ const MilestoneDot = ({ x, y, position }: Props) => {
         fill='none'
         stroke='#EFBF73'
         strokeWidth='1'
+      />
+
+      <circle
+        cx='0'
+        cy='0'
+        r='19'
+        fill='none'
+        stroke='#EFBF73'
+        strokeWidth='1'
+        opacity={isHovered ? 0.45 : 0}
+        className='transition-opacity duration-900'
+      />
+      <circle
+        cx='0'
+        cy='0'
+        r='16'
+        fill='none'
+        stroke='#EFBF73'
+        strokeWidth='5'
+        opacity={isHovered ? 0.45 : 0}
+        className='transition-opacity duration-900'
+        filter='url(#milestone-dot-glow)'
       />
 
       {/* Core glow */}

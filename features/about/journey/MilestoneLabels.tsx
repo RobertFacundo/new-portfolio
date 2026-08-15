@@ -1,25 +1,33 @@
+'use client'
 import { JOURNEY_MILESTONES } from '@/shared/constants/milestones'
-import { TIMELINE } from '@/shared/constants/timeline'
 import {
   getMilestoneLabelPosition,
   getMilestonePoints,
   getMilestoneLabelY
 } from '../utils/timeline.utils'
 import { splitPreview } from '../utils/timeline.utils'
+import { useJourneyStore } from '@/shared/stores/useJourneyStore'
 
 const MilestoneLabels = () => {
   const points = getMilestonePoints(JOURNEY_MILESTONES)
+  const hoveredMilestoneId = useJourneyStore(state => state.hoveredMilestoneId)
 
   return (
     <>
       {points.map(point => {
         const previewLines = splitPreview(point.preview)
         const position = getMilestoneLabelPosition(point.progress)
-
         const y = getMilestoneLabelY(position)
+        const isHovered = hoveredMilestoneId === point.id
 
         return (
-          <g key={point.id} transform={`translate(${point.x} ${y})`}>
+          <g
+            key={point.id}
+            transform={`translate(${point.x} ${y})`}
+            className={`transition-opacity duration-500 ${
+              isHovered ? 'opacity-0' : 'opacity-100'
+            }`}
+          >
             <text
               textAnchor='middle'
               className='fill-[#EFBF73] font-brand text-[12px]'
