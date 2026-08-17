@@ -68,5 +68,43 @@ export const es = {
       libraries: 'Librerías y Herramientas',
       backend: 'Backend y Datos'
     }
+  },
+  about: {
+    header: {
+      eyebrow: 'Sobre mí',
+      subtitle:
+        'Un camino de aprendizaje constante, decisiones con intención y construcción con propósito.'
+    },
+    timeline: {
+      labels: {
+        growth: 'evolución',
+        time: 'tiempo'
+      },
+      milestones: {
+        foundation: {
+          date: 'ENE 2024',
+          title: 'Fundamentos',
+          preview: 'Aprendiendo las bases.',
+          description:
+            'El viaje comienza. Entré al mundo del desarrollo de software a través de una formación full-stack, construyendo mis bases en HTML, CSS, React, Node.js y desarrollo backend.'
+        },
+
+        exploration: {
+          date: 'ENE 2025',
+          title: 'Exploración',
+          preview: 'Convirtiendo conocimiento en proyectos.',
+          description:
+            'El curso fue solo el comienzo. Empecé a construir proyectos personales, experimentando con distintas tecnologías y convirtiendo el conocimiento en experiencia práctica.'
+        },
+
+        focus: {
+          date: 'MAR 2026',
+          title: 'Enfoque',
+          preview: 'Eligiendo frontend y perfeccionando mi oficio.',
+          description:
+            'Elegí una dirección. Mi camino se orientó hacia el desarrollo frontend, creando experiencias digitales cada vez más refinadas mientras me preparaba para entrar al mundo profesional.'
+        }
+      }
+    }
   }
 }

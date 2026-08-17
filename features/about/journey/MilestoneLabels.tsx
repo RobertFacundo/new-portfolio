@@ -3,19 +3,24 @@ import { JOURNEY_MILESTONES } from '@/shared/constants/milestones'
 import {
   getMilestoneLabelPosition,
   getMilestonePoints,
-  getMilestoneLabelY
+  getMilestoneLabelY,
+  getMilestoneContent
 } from '../utils/timeline.utils'
 import { splitPreview } from '../utils/timeline.utils'
 import { useJourneyStore } from '@/shared/stores/useJourneyStore'
+import { useTranslation } from '@/shared/i18n/useTranslations'
 
 const MilestoneLabels = () => {
+  const { t } = useTranslation()
   const points = getMilestonePoints(JOURNEY_MILESTONES)
   const hoveredMilestoneId = useJourneyStore(state => state.hoveredMilestoneId)
 
   return (
     <>
       {points.map(point => {
-        const previewLines = splitPreview(point.preview)
+        const milestone = getMilestoneContent(t, point.id)
+
+        const previewLines = splitPreview(milestone.preview)
         const position = getMilestoneLabelPosition(point.progress)
         const y = getMilestoneLabelY(position)
         const isHovered = hoveredMilestoneId === point.id
@@ -32,7 +37,7 @@ const MilestoneLabels = () => {
               textAnchor='middle'
               className='fill-[#EFBF73] font-brand text-[12px]'
             >
-              {point.date}
+              {milestone.date}
             </text>
 
             <text
@@ -40,7 +45,7 @@ const MilestoneLabels = () => {
               textAnchor='middle'
               className='fill-[#f5f5f2ef] font-display text-[12px] uppercase tracking-widest'
             >
-              {point.title}
+              {milestone.title}
             </text>
 
             <text

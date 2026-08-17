@@ -1,0 +1,73 @@
+interface Props {
+  number: string
+  title: string
+  description: string
+}
+
+const PhilosophyPrinciple = ({ number, title, description }: Props) => {
+  return (
+    <article
+      className='
+        flex
+    flex-1
+    items-center
+    border-b
+    border-gold/30
+    last:border-b-0
+    px-4
+      '
+    >
+      {/* Number */}
+      <span
+        className='
+        w-8
+        shrink-0
+        font-body
+        text-[16px]
+        tracking-widest
+        text-gold
+      '
+      >
+        {number}
+      </span>
+
+      {/* Content */}
+      <div
+        className='
+        flex
+        flex-col
+        border-l
+        border-gold/20
+        pl-5
+      '
+      >
+        <h3
+          className='
+          font-brand
+          text-[16px]
+          uppercase
+          tracking-widest
+          text-gold
+        '
+        >
+          {title}
+        </h3>
+
+        <p
+          className='
+          mt-2
+          font-body
+          text-[12px]
+          leading-relaxed
+          tracking-widest
+          text-text-secondary
+        '
+        >
+          {description}
+        </p>
+      </div>
+    </article>
+  )
+}
+
+export default PhilosophyPrinciple

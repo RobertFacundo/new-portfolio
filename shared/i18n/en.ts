@@ -68,5 +68,43 @@ export const en = {
       libraries: 'Libraries & Tools',
       backend: 'Backend & Data'
     }
+  },
+  about: {
+    header: {
+      eyebrow: 'About Me',
+      subtitle:
+        'A path of continuous learning, intentional choices, and building with purpose.'
+    },
+    timeline: {
+      labels: {
+        growth: 'growth',
+        time: 'time'
+      },
+      milestones: {
+        foundation: {
+          date: 'JAN 2024',
+          title: 'Foundation',
+          preview: 'Learning the fundamentals.',
+          description:
+            'The journey begins. I entered the world of software development through full-stack training, building my foundations in HTML, CSS, React, Node.js, and backend development.'
+        },
+
+        exploration: {
+          date: 'JAN 2025',
+          title: 'Exploration',
+          preview: 'Turning knowledge into projects.',
+          description:
+            'The course was only the beginning. I started building personal projects, experimenting with different technologies and turning knowledge into practical experience.'
+        },
+
+        focus: {
+          date: 'MAR 2026',
+          title: 'Focus',
+          preview: 'Choosing frontend, refining my craft.',
+          description:
+            'I chose a direction. My journey shifted toward frontend development, creating increasingly refined digital experiences while preparing to enter the professional world.'
+        }
+      }
+    }
   }
 }
