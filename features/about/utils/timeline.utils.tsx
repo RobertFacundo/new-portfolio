@@ -80,11 +80,6 @@ export const getCurvePoints = (
 /* Curve generation                                                           */
 /* -------------------------------------------------------------------------- */
 
-const getVariation = (index: number) => {
-  const value = Math.sin(index * 12.9898) * 43758.5453
-
-  return value - Math.floor(value)
-}
 export const getCurvePath = (points: readonly CurvePoint[]) => {
   if (points.length === 0) return ''
 
@@ -103,13 +98,8 @@ export const getCurvePath = (points: readonly CurvePoint[]) => {
 
     const verticalChange = Math.abs(distanceY)
 
-    const variation = getVariation(i)
-
-    const horizontalTension = 0.3 + variation * 0.2
-    const verticalInfluence = Math.min(
-      verticalChange * (0.35 + variation * 0.3),
-      distanceX * 0.4
-    )
+    const horizontalTension = 0.4
+    const verticalInfluence = Math.min(verticalChange * 0.45, distanceX * 0.4)
 
     const direction = Math.sign(distanceY)
 
@@ -117,12 +107,9 @@ export const getCurvePath = (points: readonly CurvePoint[]) => {
 
     const controlY = verticalInfluence * direction
 
-    path += `
-      C
-      ${current.x + controlX} ${current.y + controlY},
-      ${next.x - controlX} ${next.y - controlY},
-      ${next.x} ${next.y}
-    `
+    path += ` C ${current.x + controlX} ${current.y + controlY}, ${
+      next.x - controlX
+    } ${next.y - controlY}, ${next.x} ${next.y}`
   }
 
   return path
