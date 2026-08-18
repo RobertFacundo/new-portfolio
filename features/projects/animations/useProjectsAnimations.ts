@@ -14,7 +14,7 @@ export const useProjectsAnimations = ({ titleRef, projectsRef }: Props) => {
 
     if (!title || !projects) return
 
-    const cards = Array.from(projects.children)
+    const cards = projects.querySelectorAll('.project-card')
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -50,11 +50,11 @@ export const useProjectsAnimations = ({ titleRef, projectsRef }: Props) => {
         opacity: 1,
         scale: 1,
         filter: 'blur(0px)',
-        duration: 1.2,
+        duration: 0.8,
         stagger: 0.65,
-        ease: 'expo.inOut'
+        ease: 'sine.out'
       },
-      '-=0.4'
+      '-=0.7'
     )
   }, [])
 }

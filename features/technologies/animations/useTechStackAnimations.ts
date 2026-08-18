@@ -26,7 +26,7 @@ export const useTechStackAnimations = ({ titleRef, columnsRef }: Props) => {
         y: 40,
         opacity: 0,
         duration: 0.8,
-        ease: 'expo.inOut'
+        ease: 'sine.out'
       })
       .from(
         columns,
@@ -34,9 +34,9 @@ export const useTechStackAnimations = ({ titleRef, columnsRef }: Props) => {
           scale: 0.7,
           filter: 'blur(9px)',
           opacity: 0,
-          duration: 0.9,
+          duration: 0.8,
           stagger: 0.15,
-          ease: 'power3.out'
+          ease: 'sine.out'
         },
         '-=0.4'
       )
