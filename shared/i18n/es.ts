@@ -105,6 +105,32 @@ export const es = {
             'Elegí una dirección. Mi camino se orientó hacia el desarrollo frontend, creando experiencias digitales cada vez más refinadas mientras me preparaba para entrar al mundo profesional.'
         }
       }
+    },
+    philosophy: {
+      title: 'Filosofía',
+      subtitle: 'Principios que guían mi forma de programar.',
+      principles: {
+        'component-thinking': {
+          title: 'Pensamiento por componentes',
+          description: 'Sistemas reutilizables en lugar de soluciones aisladas.'
+        },
+        'modular-architecture': {
+          title: 'Arquitectura modular',
+          description: 'Límites claros. Piezas independientes.'
+        },
+        'intentional-ux': {
+          title: 'UX intencional',
+          description: 'Cada interacción debe tener un propósito.'
+        },
+        'visual-precision': {
+          title: 'Precisión visual',
+          description: 'Los detalles definen la experiencia.'
+        },
+        'continuous-refinement': {
+          title: 'Refinamiento continuo',
+          description: 'Construir. Revisar. Refinar.'
+        }
+      }
     }
   }
 }

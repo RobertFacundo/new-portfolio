@@ -20,13 +20,21 @@ const PhilosophyPrinciple = ({ number, title, description }: Props) => {
       {/* Number */}
       <span
         className='
-        w-8
-        shrink-0
-        font-body
-        text-[16px]
-        tracking-widest
-        text-gold
-      '
+    flex
+    h-8
+    w-8
+    shrink-0
+    items-center
+    justify-center
+    rounded-full
+    border
+    border-gold
+    font-body
+    text-[11px]
+    tracking-widest
+    text-gold
+    mr-3
+  '
       >
         {number}
       </span>

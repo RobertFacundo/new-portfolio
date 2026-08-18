@@ -105,6 +105,32 @@ export const en = {
             'I chose a direction. My journey shifted toward frontend development, creating increasingly refined digital experiences while preparing to enter the professional world.'
         }
       }
+    },
+    philosophy: {
+      title: 'Philosophy',
+      subtitle: 'Principles behind the way I build.',
+      principles: {
+        'component-thinking': {
+          title: 'Component Thinking',
+          description: 'Reusable systems over isolated solutions.'
+        },
+        'modular-architecture': {
+          title: 'Modular Architecture',
+          description: 'Clear boundaries. Independent pieces.'
+        },
+        'intentional-ux': {
+          title: 'Intentional UX',
+          description: 'Every interaction should have a reason.'
+        },
+        'visual-precision': {
+          title: 'Visual Precision',
+          description: 'Details define the experience.'
+        },
+        'continuous-refinement': {
+          title: 'Continuous Refinement',
+          description: 'Build. Review. Refine.'
+        }
+      }
     }
   }
 }

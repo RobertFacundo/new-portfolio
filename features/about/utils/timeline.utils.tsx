@@ -174,3 +174,11 @@ export const getMilestoneContent = (
   preview: t(`about.timeline.milestones.${id}.preview`),
   description: t(`about.timeline.milestones.${id}.description`)
 })
+
+export const getPhilosophyPrincipleContent = (
+  t: (key: string) => string,
+  id: string
+) => ({
+  title: t(`about.philosophy.principles.${id}.title`),
+  description: t(`about.philosophy.principles.${id}.description`)
+})
