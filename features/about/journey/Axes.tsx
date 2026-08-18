@@ -11,6 +11,7 @@ const Axes = () => {
         y2={TIMELINE.yTop}
         stroke='currentColor'
         strokeWidth='0.5'
+        className='timeline-axis-y'
       />
 
       {/* Y axis arrow */}
@@ -19,6 +20,7 @@ const Axes = () => {
         fill='none'
         stroke='currentColor'
         strokeWidth='1'
+        className='timeline-axis-y'
       />
 
       {/* X axis */}
@@ -29,6 +31,7 @@ const Axes = () => {
         y2={TIMELINE.yOrigin}
         stroke='currentColor'
         strokeWidth='0.5'
+        className='timeline-axis-x'
       />
 
       {/* X axis arrow */}
@@ -37,6 +40,7 @@ const Axes = () => {
         fill='none'
         stroke='currentColor'
         strokeWidth='1'
+        className='timeline-axis-x'
       />
     </>
   )
