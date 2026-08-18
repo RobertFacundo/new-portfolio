@@ -8,6 +8,7 @@ const PhilosophyPrinciple = ({ number, title, description }: Props) => {
   return (
     <article
       className='
+      philosophy-principle
         flex
     flex-1
     items-center
