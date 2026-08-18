@@ -164,3 +164,21 @@ export const getMilestoneLabelY = (position: 'top' | 'bottom') => {
 export const getMilestoneCardY = (position: 'top' | 'bottom') => {
   return position === 'top' ? TIMELINE.yTop : TIMELINE.yBottom
 }
+
+export const getMilestoneContent = (
+  t: (key: string) => string,
+  id: string
+) => ({
+  date: t(`about.timeline.milestones.${id}.date`),
+  title: t(`about.timeline.milestones.${id}.title`),
+  preview: t(`about.timeline.milestones.${id}.preview`),
+  description: t(`about.timeline.milestones.${id}.description`)
+})
+
+export const getPhilosophyPrincipleContent = (
+  t: (key: string) => string,
+  id: string
+) => ({
+  title: t(`about.philosophy.principles.${id}.title`),
+  description: t(`about.philosophy.principles.${id}.description`)
+})

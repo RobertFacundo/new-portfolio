@@ -1,9 +1,5 @@
 export interface JourneyMilestone {
   id: string
-  date: string
-  title: string
-  preview: string
-  description: string
   progress: number
   image: string
 }
@@ -11,31 +7,16 @@ export interface JourneyMilestone {
 export const JOURNEY_MILESTONES: JourneyMilestone[] = [
   {
     id: 'foundation',
-    date: 'JAN 2024',
-    title: 'Foundation',
-    preview: 'Learning the fundamentals.',
-    description:
-      'The journey begins. I entered the world of software development through full-stack training, building my foundations in HTML, CSS, React, Node.js, and backend development.',
     progress: 20,
     image: '/images/about/brickwall.png'
   },
   {
     id: 'exploration',
-    date: 'JAN 2025',
-    title: 'Exploration',
-    preview: 'Turning knowledge into projects.',
-    description:
-      'The course was only the beginning. I started building personal projects, experimenting with different technologies and turning knowledge into practical experience.',
     progress: 41,
     image: '/images/about/exploration.png'
   },
   {
     id: 'focus',
-    date: 'MAR 2026',
-    title: 'Focus',
-    preview: 'Choosing frontend, refining my craft.',
-    description:
-      'I chose a direction. My journey shifted toward frontend development, creating increasingly refined digital experiences while preparing to enter the professional world.',
     progress: 77,
     image: '/images/about/dartboard.png'
   }

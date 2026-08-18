@@ -3,6 +3,8 @@ import { useJourneyStore } from '@/shared/stores/useJourneyStore'
 import type { MilestonePoint } from '../utils/timeline.utils'
 import MilestonePointer from './MilestonePointer'
 import Image from 'next/image'
+import { useTranslation } from '@/shared/i18n/useTranslations'
+import { getMilestoneContent } from '../utils/timeline.utils'
 
 interface Props {
   point: MilestonePoint
@@ -10,9 +12,12 @@ interface Props {
 }
 
 const MilestoneCard = ({ point, position }: Props) => {
+  const { t } = useTranslation()
   const hoveredMilestoneId = useJourneyStore(state => state.hoveredMilestoneId)
   const isHovered = hoveredMilestoneId === point.id
   const isTop = position === 'top'
+
+  const milestone = getMilestoneContent(t, point.id)
 
   return (
     <div
@@ -36,15 +41,15 @@ const MilestoneCard = ({ point, position }: Props) => {
         <Image src={point.image} alt='' width={80} height={80} />
         <div className='flex flex-col w-2/3 gap-1 mx-auto'>
           <span className='text-[#EFBF73] font-brand text-[9px] text-right tracking-widest'>
-            {point.date}
+            {milestone.date}
           </span>
 
           <h2 className='text-[#f5f5f2ef] font-display text-[12px] uppercase tracking-widest'>
-            {point.title}
+            {milestone.title}
           </h2>
 
           <p className='text-[#bebaba] font-body text-[9px] tracking-widest text-left w-full pl-1'>
-            {point.description}
+            {milestone.description}
           </p>
         </div>
       </div>
