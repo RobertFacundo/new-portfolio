@@ -9,7 +9,7 @@ interface ProjectStackProps {
 
 const ProjectStack = ({ projects, open }: ProjectStackProps) => {
   return (
-    <div className='relative h-[400px] overflow-hidden'>
+    <div className='project-card relative h-[400px] overflow-hidden'>
       {projects.map((project, index) => (
         <div
           key={project.id}
