@@ -6,7 +6,7 @@ const Curve = () => {
   const path = getCurvePath(points)
 
   return (
-    <>
+    <g className='timeline-curve'>
       <defs>
         <filter id='timeline-glow' x='-50%' y='-50%' width='200%' height='200%'>
           <feGaussianBlur stdDeviation='4' result='blur' />
@@ -29,8 +29,14 @@ const Curve = () => {
       />
 
       {/* Main curve */}
-      <path d={path} fill='none' stroke='#EFBF73' strokeWidth='1' />
-    </>
+      <path
+        d={path}
+        fill='none'
+        stroke='#EFBF73'
+        strokeWidth='1'
+        className='timeline-curve-main'
+      />
+    </g>
   )
 }
 
