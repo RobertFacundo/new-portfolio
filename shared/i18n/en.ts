@@ -68,5 +68,69 @@ export const en = {
       libraries: 'Libraries & Tools',
       backend: 'Backend & Data'
     }
+  },
+  about: {
+    header: {
+      eyebrow: 'About Me',
+      subtitle:
+        'A path of continuous learning, intentional choices, and building with purpose.'
+    },
+    timeline: {
+      labels: {
+        growth: 'growth',
+        time: 'time'
+      },
+      milestones: {
+        foundation: {
+          date: 'JAN 2024',
+          title: 'Foundation',
+          preview: 'Learning the fundamentals.',
+          description:
+            'The journey begins. I entered the world of software development through full-stack training, building my foundations in HTML, CSS, React, Node.js, and backend development.'
+        },
+
+        exploration: {
+          date: 'JAN 2025',
+          title: 'Exploration',
+          preview: 'Turning knowledge into projects.',
+          description:
+            'The course was only the beginning. I started building personal projects, experimenting with different technologies and turning knowledge into practical experience.'
+        },
+
+        focus: {
+          date: 'MAR 2026',
+          title: 'Focus',
+          preview: 'Choosing frontend, refining my craft.',
+          description:
+            'I chose a direction. My journey shifted toward frontend development, creating increasingly refined digital experiences while preparing to enter the professional world.'
+        }
+      }
+    },
+    philosophy: {
+      title: 'Philosophy',
+      subtitle: 'Principles behind the way I build.',
+      principles: {
+        'component-thinking': {
+          title: 'Component Thinking',
+          description: 'Reusable systems over isolated solutions.'
+        },
+        'modular-architecture': {
+          title: 'Modular Architecture',
+          description: 'Clear boundaries. Independent pieces.'
+        },
+        'intentional-ux': {
+          title: 'Intentional UX',
+          description: 'Every interaction should have a reason.'
+        },
+        'visual-precision': {
+          title: 'Visual Precision',
+          description: 'Details define the experience.'
+        },
+        'continuous-refinement': {
+          title: 'Continuous Refinement',
+          description: 'Build. Review. Refine.'
+        }
+      }
+    }
   }
 }

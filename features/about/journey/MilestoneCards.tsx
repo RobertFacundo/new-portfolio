@@ -1,5 +1,4 @@
 import { JOURNEY_MILESTONES } from '@/shared/constants/milestones'
-import { TIMELINE } from '@/shared/constants/timeline'
 import {
   getMilestoneLabelPosition,
   getMilestonePoints
