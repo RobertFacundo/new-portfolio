@@ -44,7 +44,7 @@ const Navigation = () => {
           href='/cv.pdf'
           target='_blank'
           rel='noopener noreferrer'
-          className='luxury-button font-brand'
+          className='luxury-button font-brand group'
         >
           <span
             ref={el => {
@@ -53,7 +53,12 @@ const Navigation = () => {
           >
             {t('navigation.cv')}
           </span>
-          <FiExternalLink className='ml-2 text-sm' />
+          <FiExternalLink
+            className='ml-2 text-sm transition-transform
+      duration-300
+      group-hover:translate-x-1
+      group-hover:-translate-y-1'
+          />
         </a>
       </div>
     </nav>

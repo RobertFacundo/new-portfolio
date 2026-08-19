@@ -176,6 +176,22 @@
   .milestone-pointer-bottom {
     background: linear-gradient(top, #14120a, #14120af6, #14120ae8, #14120ac0);
   }
+
+  .contact-field {
+    @apply flex flex-col gap-2 rounded-md border border-gold/30 bg-gold/10 p-3;
+  }
+
+  .contact-label {
+    @apply font-brand text-[10px] uppercase tracking-[0.2em] text-gold/80 border-b border-gold/30 w-fit pb-1;
+  }
+
+  .contact-input {
+    @apply w-full bg-transparent font-body text-sm tracking-wide text-text-primary outline-none placeholder:text-text-secondary/40;
+  }
+
+  .contact-textarea {
+    @apply w-full resize-none bg-transparent font-body text-sm tracking-wide outline-none placeholder:text-text-secondary/40;
+  }
 }
 
 body {
