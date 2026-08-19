@@ -1,5 +1,13 @@
+import Content from './components/Content'
+import Email from './components/Email'
+
 const Contact = () => {
-  return <h1>Contact section</h1>
+  return (
+    <div id='contact' className='flex flex-row p-10'>
+      <Content />
+      <Email />
+    </div>
+  )
 }
 
 export default Contact
