@@ -12,7 +12,11 @@ export const en = {
     paragraph:
       'Building modern frontend experiences through scalable architecture, reusable components, and thoughtful interactions that bring ideas to life.',
     viewProjects: 'View Projects',
-    contactMe: 'Contact Me'
+    contactMe: 'Contact Me',
+    availability: {
+      remote: 'Remote · Worldwide | Based in Argentina',
+      english: 'C1 English · EF SET Certified'
+    }
   },
   projects: {
     title: 'Personal Projects',

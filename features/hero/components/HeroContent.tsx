@@ -73,12 +73,19 @@ const HeroContent = () => {
       >
         <div className='flex items-center gap-2'>
           <TfiWorld className='text-gold' size={14} />
-          <span>Remote · Worldwide | Based in Argentina </span>
+          <span>{t('hero.availability.remote')}</span>
         </div>
 
         <div className='flex items-center gap-2'>
           <HiOutlineLanguage className='text-gold' size={15} />
-          <span>C1 English</span>
+          <a
+            href='https://cert.efset.org/en/jKYi9r'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='transition-colors duration-300 hover:text-gold'
+          >
+            {t('hero.availability.english')} ↗
+          </a>
         </div>
       </div>
     </div>
