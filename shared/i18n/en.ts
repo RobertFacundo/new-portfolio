@@ -59,7 +59,8 @@ export const en = {
         description:
           'A modern ecommerce frontend inspired by a Figma design, focused on responsive UI and smooth interactions.'
       }
-    }
+    },
+    vercel: 'More projects on Vercel ↗'
   },
   techStack: {
     title: 'Tech Stack',
@@ -73,7 +74,8 @@ export const en = {
     header: {
       eyebrow: 'About Me',
       subtitle:
-        'A path of continuous learning, intentional choices, and building with purpose.'
+        'A path of continuous learning, intentional choices, and building with purpose.',
+      hours: 'hours of coding, research & practice'
     },
     timeline: {
       labels: {

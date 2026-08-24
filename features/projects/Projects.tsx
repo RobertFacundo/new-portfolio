@@ -3,11 +3,13 @@ import { useRef, useState } from 'react'
 import ProjectsSection from './components/ProjectsSection'
 import { useProjectsAnimations } from './animations/useProjectsAnimations'
 import SectionHeader from './components/SectionHeader'
+import { useTranslation } from '@/shared/i18n/useTranslations'
 
 const Projects = () => {
   const [open, setOpen] = useState(false)
   const titleRef = useRef<HTMLHeadingElement | null>(null)
   const projectsRef = useRef<HTMLDivElement | null>(null)
+  const { t } = useTranslation()
 
   useProjectsAnimations({
     titleRef,
@@ -23,6 +25,16 @@ const Projects = () => {
         onToggle={() => setOpen(prev => !prev)}
       />
       <ProjectsSection open={open} ref={projectsRef} />
+      <div className='mt-8 flex justify-start pl-5'>
+        <a
+          href='https://vercel.com/robertfacundos-projects'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='font-brand text-xs uppercase tracking-[0.25em] text-text-secondary transition-colors duration-300 hover:text-gold'
+        >
+          {t('projects.vercel')}
+        </a>
+      </div>
     </section>
   )
 }
