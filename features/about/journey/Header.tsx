@@ -14,7 +14,7 @@ const Header = () => {
         {t('about.header.eyebrow')}
       </span>
       <div className='flex w-full flex-row gap-5 '>
-        <p className='journey-header-subtitle w-1/2 font-body text-lg leading-6 tracking-wider text-text-secondary'>
+        <p className='journey-header-subtitle w-1/2 font-body text-[15px]  md:text-lg leading-6 tracking-wider text-text-secondary'>
           {t('about.header.subtitle')}
         </p>
 

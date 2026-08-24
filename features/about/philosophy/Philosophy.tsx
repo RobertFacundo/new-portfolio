@@ -15,7 +15,7 @@ const Philosophy = () => {
   return (
     <section
       ref={philosophyRef}
-      className='w-1/3 flex flex-col items-center overflow-hidden'
+      className='w-full md:w-1/3 flex flex-col items-center overflow-hidden'
     >
       {/* Header */}
       <div className='philosophy-header flex flex-col items-center text-center mt-4'>

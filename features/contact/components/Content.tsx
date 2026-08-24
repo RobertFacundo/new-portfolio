@@ -18,7 +18,7 @@ const Content = () => {
   return (
     <div
       ref={containerRef}
-      className='contact-container flex flex-col gap-5 w-1/2 border-r border-gold/30 pr-10'
+      className='contact-container flex flex-col gap-5 w-full md:w-1/2 md:border-r border-gold/30 pr-10'
     >
       <span
         ref={el => {
@@ -33,7 +33,7 @@ const Content = () => {
         ref={el => {
           languageRefs.current[1] = el
         }}
-        className='mt-6 font-display text-5xl uppercase tracking-widest text-text-primary'
+        className='mt-6 font-display text-5xl uppercase tracking-widest text-text-primary text-center'
       >
         {t('contact.title')}
       </h1>
@@ -42,12 +42,12 @@ const Content = () => {
         ref={el => {
           languageRefs.current[2] = el
         }}
-        className='mt-6 max-w-xl font-body text-lg leading-relaxed tracking-wide text-text-secondary'
+        className='mt-6 max-w-xl font-body text-lg leading-relaxed tracking-wide text-text-secondary text-center'
       >
         {t('contact.paragraph')}
       </p>
 
-      <div className='mt-12 flex flex-row gap-2 font-brand'>
+      <div className='mt-12 flex flex-col md:flex-row gap-2 font-brand mb-5'>
         {CONTACT_VALUES.map(value => (
           <Values key={value.id} value={value} />
         ))}

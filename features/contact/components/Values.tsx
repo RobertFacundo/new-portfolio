@@ -16,7 +16,7 @@ const Values = ({ value }: Props) => {
   useLanguageTransition({ refs: languageRefs })
 
   return (
-    <article className=' contact-value border-r border-gold/20 px-3 py-6 last:border-r-0'>
+    <article className=' contact-value md:border-r border-b md:border-b-0 border-gold/20 px-3 py-6 last:border-r-0'>
       <div className='flex items-center gap-4'>
         <Icon size={30} className='text-gold' />
 

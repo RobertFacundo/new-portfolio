@@ -16,7 +16,7 @@ export const en = {
   },
   projects: {
     title: 'Personal Projects',
-
+    next: 'Next project',
     items: {
       'vinyl-store': {
         type: 'E-commerce',

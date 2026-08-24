@@ -19,7 +19,7 @@ const Footer = () => {
 
   return (
     <footer className='w-full border-t border-gold/20 bg-[#0a0a0a]'>
-      <div className='mx-auto flex w-full max-w-[1600px] items-center justify-between gap-8 px-6 py-5 md:px-10'>
+      <div className='mx-auto flex w-full max-w-[1600px] items-center justify-between gap-8 px-6 md:py-5 md:px-10'>
         {/* Brand */}
         <div className='flex items-center gap-4'>
           <a

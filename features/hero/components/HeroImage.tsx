@@ -11,13 +11,13 @@ const HeroImage = () => {
   return (
     <div
       ref={imageRef}
-      className='relative flex h-full w-full items-end justify-end pb-5 pr-9 overflow-hidden'
+      className='relative hidden md:flex h-full w-full items-end justify-end pb-5 pr-9 overflow-hidden mb-9'
     >
       <Image
         src='/images/bg-hero.png'
         alt='Cinematic laptop displaying code on a rock'
         width={900}
-        height={700}
+        height={1100}
         priority
       />
       <div className='bg-black/30 absolute' />
