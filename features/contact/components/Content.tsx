@@ -7,7 +7,7 @@ const Content = () => {
       <span className='luxury-title w-fit'>Contact</span>
 
       <h1 className='mt-6 font-display text-5xl uppercase tracking-widest text-text-primary'>
-        Let's build something intentional
+        Let's build something
       </h1>
 
       <p className='mt-6 max-w-xl font-body text-lg leading-relaxed tracking-wide text-text-secondary'>

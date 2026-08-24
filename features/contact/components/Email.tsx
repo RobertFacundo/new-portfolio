@@ -1,57 +1,69 @@
+'use client'
 import { SiWhatsapp } from 'react-icons/si'
 import { MdOutlineMail } from 'react-icons/md'
-import { FiArrowUpRight } from 'react-icons/fi'
+import { FiArrowUpRight, FiCheck } from 'react-icons/fi'
+import {
+  sendContactEmail,
+  type ContactState
+} from '../actions/sendContactEmail'
+import { useActionState } from 'react'
+
+const initialState: ContactState = {
+  success: false
+}
 
 const Email = () => {
+  const [state, formAction, isPending] = useActionState(
+    sendContactEmail,
+    initialState
+  )
+
   return (
     <div className='w-1/2 pl-10 font-brand text-text-secondary'>
-      <form className='flex flex-col gap-8 '>
+      <form action={formAction} className='flex flex-col gap-8 '>
         <div className='flex flex-row gap-5 w-full'>
           <div className='contact-field w-1/2'>
             <label className='contact-label'>Your Name</label>
-            <input className='contact-input' type='text' />
+            <input name='name' className='contact-input' type='text' />
           </div>
 
           <div className='contact-field w-1/2'>
             <label className='contact-label'>Your Email</label>
-            <input className='contact-input' type='text' />
+            <input name='email' className='contact-input' type='text' />
           </div>
         </div>
 
         <div className='contact-field'>
           <label className='contact-label'>Subject</label>
-          <input className='contact-input' type='text' />
+          <input name='subject' className='contact-input' type='text' />
         </div>
 
         <div className='contact-field'>
           <label className='contact-label'>Message</label>
-          <textarea className='contact-textarea' rows={5} />
+          <textarea name='message' className='contact-textarea' rows={5} />
         </div>
 
         <button
           type='submit'
-          className='
-    group
-    flex
-    items-center
-    justify-center
-    gap-3
-    luxury-button
-    cursor-pointer
-    text-gold
-  '
+          disabled={isPending || state.success}
+          className='group flex items-center justify-center gap-3 luxury-button cursor-pointer text-gold disabled:cursor-default'
         >
-          <span>Send Message</span>
+          <span>
+            {isPending
+              ? 'Sending...'
+              : state.success
+              ? 'Message Sent'
+              : 'Send Message'}
+          </span>
 
-          <FiArrowUpRight
-            className='
-      transition-transform
-      duration-300
-      group-hover:translate-x-1
-      group-hover:-translate-y-1
-    '
-            size={16}
-          />
+          {state.success ? (
+            <FiCheck size={16} />
+          ) : (
+            <FiArrowUpRight
+              className='transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1'
+              size={16}
+            />
+          )}
         </button>
       </form>
 
@@ -60,31 +72,15 @@ const Email = () => {
 
         <div className='flex gap-6 items-center'>
           <a
-            href='mailto:TU_EMAIL'
-            className='
-    flex h-12 w-12 items-center justify-center
-    rounded-full
-    border border-gold/30
-    text-gold
-    transition-all duration-700
-    hover:border-gold
-    hover:bg-gold/10
-  '
+            href='mailto:robertf.coder@gmail.com'
+            className=' flex h-12 w-12 items-center justify-center rounded-full border border-gold/30 text-gold transition-all duration-700 hover:border-gold hover:bg-gold/1 '
           >
             <MdOutlineMail size={27} />
           </a>
 
           <a
-            href='mailto:TU_EMAIL'
-            className='
-    flex h-12 w-12 items-center justify-center
-    rounded-full
-    border border-gold/30
-    text-gold
-    transition-all duration-700
-    hover:border-gold
-    hover:bg-gold/10
-  '
+            href='https://wa.me/5492235801773'
+            className=' flex h-12 w-12 items-center justify-center rounded-full border border-gold/30 text-gold transition-all duration-700 hover:border-gold hover:bg-gold/1 '
           >
             <SiWhatsapp size={27} />
           </a>
