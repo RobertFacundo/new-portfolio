@@ -7,12 +7,14 @@ import {
   type ContactState
 } from '../actions/sendContactEmail'
 import { useActionState } from 'react'
+import { useTranslation } from '@/shared/i18n/useTranslations'
 
 const initialState: ContactState = {
   success: false
 }
 
 const Email = () => {
+  const { t } = useTranslation()
   const [state, formAction, isPending] = useActionState(
     sendContactEmail,
     initialState
@@ -23,23 +25,23 @@ const Email = () => {
       <form action={formAction} className='flex flex-col gap-8 '>
         <div className='flex flex-row gap-5 w-full'>
           <div className='contact-field w-1/2'>
-            <label className='contact-label'>Your Name</label>
+            <label className='contact-label'> {t('contact.form.name')}</label>
             <input name='name' className='contact-input' type='text' />
           </div>
 
           <div className='contact-field w-1/2'>
-            <label className='contact-label'>Your Email</label>
+            <label className='contact-label'> {t('contact.form.email')}</label>
             <input name='email' className='contact-input' type='text' />
           </div>
         </div>
 
         <div className='contact-field'>
-          <label className='contact-label'>Subject</label>
+          <label className='contact-label'> {t('contact.form.subject')}</label>
           <input name='subject' className='contact-input' type='text' />
         </div>
 
         <div className='contact-field'>
-          <label className='contact-label'>Message</label>
+          <label className='contact-label'>{t('contact.form.message')}</label>
           <textarea name='message' className='contact-textarea' rows={5} />
         </div>
 
@@ -50,10 +52,10 @@ const Email = () => {
         >
           <span>
             {isPending
-              ? 'Sending...'
+              ? t('contact.form.sending')
               : state.success
-              ? 'Message Sent'
-              : 'Send Message'}
+              ? t('contact.form.sent')
+              : t('contact.form.send')}
           </span>
 
           {state.success ? (
@@ -68,7 +70,7 @@ const Email = () => {
       </form>
 
       <div className='flex flex-row items-center gap-15 mt-5 pt-3 border-t border-gold/20'>
-        <span>Prefer to reach me directly?</span>
+        <span>{t('contact.direct')}</span>
 
         <div className='flex gap-6 items-center'>
           <a

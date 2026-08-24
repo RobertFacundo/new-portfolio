@@ -132,5 +132,38 @@ export const en = {
         }
       }
     }
+  },
+  contact: {
+    eyebrow: 'Contact',
+    title: "Let's build something",
+    paragraph:
+      "I'm seeking my first professional opportunity where I can contribute, grow, and build meaningful products.",
+
+    form: {
+      name: 'Your Name',
+      email: 'Your Email',
+      subject: 'Subject',
+      message: 'Message',
+      send: 'Send Message',
+      sending: 'Sending...',
+      sent: 'Message Sent'
+    },
+
+    direct: 'Prefer to reach me directly?',
+
+    values: {
+      reliable: {
+        title: 'Reliable',
+        description: '— honest & clear communication. Consistent delivery.'
+      },
+      committed: {
+        title: 'Committed',
+        description: '— to becoming a professional developer.'
+      },
+      focused: {
+        title: 'Focused',
+        description: '— meaningful work over unnecessary complexity.'
+      }
+    }
   }
 }

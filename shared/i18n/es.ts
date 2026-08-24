@@ -132,5 +132,39 @@ export const es = {
         }
       }
     }
+  },
+  contact: {
+    eyebrow: 'Contacto',
+    title: 'Construyamos algo',
+    paragraph:
+      'Estoy buscando mi primera oportunidad profesional donde pueda aportar, crecer y crear productos significativos.',
+
+    form: {
+      name: 'Tu nombre',
+      email: 'Tu email',
+      subject: 'Asunto',
+      message: 'Mensaje',
+      send: 'Enviar mensaje',
+      sending: 'Enviando...',
+      sent: 'Mensaje enviado'
+    },
+
+    direct: '¿Preferís contactarme directamente?',
+
+    values: {
+      reliable: {
+        title: 'Confiable',
+        description: '— comunicación honesta y clara. Entrega consistente.'
+      },
+      committed: {
+        title: 'Comprometido',
+        description: '— con convertirme en un desarrollador profesional.'
+      },
+      focused: {
+        title: 'Enfocado',
+        description:
+          '— en trabajo significativo por sobre la complejidad innecesaria.'
+      }
+    }
   }
 }
