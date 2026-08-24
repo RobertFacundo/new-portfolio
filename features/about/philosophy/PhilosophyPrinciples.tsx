@@ -16,6 +16,7 @@ const PhilosophyPrinciple = ({ number, title, description }: Props) => {
     border-gold/30
     last:border-b-0
     px-4
+    py-5
       '
     >
       {/* Number */}

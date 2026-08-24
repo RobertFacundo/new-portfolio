@@ -16,6 +16,7 @@ export const es = {
   },
   projects: {
     title: 'Proyectos Personales',
+    next: 'Siguiente proyecto',
 
     items: {
       'vinyl-store': {

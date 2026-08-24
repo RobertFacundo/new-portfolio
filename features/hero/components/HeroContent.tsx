@@ -32,7 +32,7 @@ const HeroContent = () => {
   return (
     <div
       ref={container}
-      className='hero-content relative flex w-1/3 flex-col justify-center pl-17 gap-6 mt-15'
+      className='hero-content relative flex w-full md:w-1/3 flex-col justify-center pl-17 gap-6 mt-15'
     >
       <div className='flex flex-col gap-3'>
         <span
@@ -44,7 +44,7 @@ const HeroContent = () => {
 
         <h1
           ref={title}
-          className='font-display text-[100px] leading-[0.8] text-text-primary ml-1 tracking-wide mt-2'
+          className='font-display text-[90px] md:text-[100px] leading-[0.8] text-text-primary ml-1 tracking-wide mt-2'
         >
           Facundo
           <br />
@@ -61,7 +61,7 @@ const HeroContent = () => {
 
       <p
         ref={paragraph}
-        className='font-body text-text-secondary mb-5 tracking-wider leading-6 text-lg w-[540px]'
+        className='font-body text-text-secondary mb-5 tracking-wider leading-6 text-lg md:w-[540px]'
       >
         {t('hero.paragraph')}
       </p>

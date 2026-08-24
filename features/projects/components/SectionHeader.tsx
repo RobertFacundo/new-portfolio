@@ -25,7 +25,8 @@ const SectionHeader = forwardRef<HTMLHeadingElement, SectionHeaderProps>(
           <button
             onClick={onToggle}
             className='
-            flex
+            hidden
+            md:flex
             items-center
             justify-center
             text-text-secondary

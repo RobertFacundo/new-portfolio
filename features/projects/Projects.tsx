@@ -4,6 +4,7 @@ import ProjectsSection from './components/ProjectsSection'
 import { useProjectsAnimations } from './animations/useProjectsAnimations'
 import SectionHeader from './components/SectionHeader'
 import { useTranslation } from '@/shared/i18n/useTranslations'
+import MobileProjectsSection from './components/MobileProjectsSection'
 
 const Projects = () => {
   const [open, setOpen] = useState(false)
@@ -24,7 +25,14 @@ const Projects = () => {
         open={open}
         onToggle={() => setOpen(prev => !prev)}
       />
-      <ProjectsSection open={open} ref={projectsRef} />
+      <div className='hidden md:block'>
+        <ProjectsSection open={open} ref={projectsRef} />
+      </div>
+
+      {/* Mobile */}
+      <div className='md:hidden'>
+        <MobileProjectsSection />
+      </div>
       <div className='mt-8 flex justify-start pl-5'>
         <a
           href='https://vercel.com/robertfacundos-projects'
