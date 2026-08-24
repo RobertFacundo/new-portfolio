@@ -59,7 +59,8 @@ export const es = {
         description:
           'Un ecommerce moderno inspirado en un diseño de Figma, centrado en una interfaz responsive e interacciones fluidas.'
       }
-    }
+    },
+    vercel: 'Más proyectos en Vercel ↗'
   },
   techStack: {
     title: 'Stack Tecnológico',
@@ -73,7 +74,8 @@ export const es = {
     header: {
       eyebrow: 'Sobre mí',
       subtitle:
-        'Un camino de aprendizaje constante, decisiones con intención y construcción con propósito.'
+        'Un camino de aprendizaje constante, decisiones con intención y construcción con propósito.',
+      hours: 'horas de código, investigación y práctica'
     },
     timeline: {
       labels: {

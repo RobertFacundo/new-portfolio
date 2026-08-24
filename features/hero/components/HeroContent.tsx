@@ -4,6 +4,8 @@ import Buttons from './Buttons'
 import SocialLinks from './SocialLinks'
 import { useRef } from 'react'
 import { useHeroAnimation } from '../animations/useHeroAnimation'
+import { TfiWorld } from 'react-icons/tfi'
+import { HiOutlineLanguage } from 'react-icons/hi2'
 
 const HeroContent = () => {
   const { t } = useTranslation()
@@ -14,6 +16,7 @@ const HeroContent = () => {
   const paragraph = useRef<HTMLParagraphElement>(null)
   const buttons = useRef<HTMLDivElement>(null)
   const social = useRef<HTMLDivElement>(null)
+  const availability = useRef<HTMLDivElement>(null)
 
   useHeroAnimation({
     container,
@@ -22,13 +25,14 @@ const HeroContent = () => {
     subtitle,
     paragraph,
     buttons,
-    social
+    social,
+    availability
   })
 
   return (
     <div
       ref={container}
-      className='hero-content flex w-1/3 flex-col justify-center pl-17 gap-6'
+      className='hero-content relative flex w-1/3 flex-col justify-center pl-17 gap-6 mt-15'
     >
       <div className='flex flex-col gap-3'>
         <span
@@ -63,6 +67,20 @@ const HeroContent = () => {
       </p>
       <Buttons ref={buttons} />
       <SocialLinks ref={social} />
+      <div
+        ref={availability}
+        className='mt-5 flex flex-col gap-2 font-body text-xs uppercase tracking-[0.2em] text-text-secondary'
+      >
+        <div className='flex items-center gap-2'>
+          <TfiWorld className='text-gold' size={14} />
+          <span>Remote · Worldwide | Based in Argentina </span>
+        </div>
+
+        <div className='flex items-center gap-2'>
+          <HiOutlineLanguage className='text-gold' size={15} />
+          <span>C1 English</span>
+        </div>
+      </div>
     </div>
   )
 }

@@ -13,9 +13,21 @@ const Header = () => {
       <span className='journey-header-eyebrow luxury-title w-fit'>
         {t('about.header.eyebrow')}
       </span>
-      <p className='journey-header-subtitle font-body text-text-secondary mb-5 tracking-wider leading-6 text-lg w-[540px]'>
-        {t('about.header.subtitle')}
-      </p>
+      <div className='flex w-full flex-row gap-5 '>
+        <p className='journey-header-subtitle w-1/2 font-body text-lg leading-6 tracking-wider text-text-secondary'>
+          {t('about.header.subtitle')}
+        </p>
+
+        <div className='flex w-1/2 items-center gap-4 border-t border-gold/20 pt-4 journey-header-hours'>
+          <span className='font-brand text-3xl tracking-wide text-gold '>
+            2500+
+          </span>
+
+          <span className='font-brand text-xs uppercase tracking-[0.25em] text-text-secondary '>
+            {t('about.header.hours')}
+          </span>
+        </div>
+      </div>
     </div>
   )
 }
