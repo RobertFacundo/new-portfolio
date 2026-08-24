@@ -31,7 +31,7 @@ const Email = () => {
   return (
     <div
       ref={containerRef}
-      className='w-1/2 pl-10 font-brand text-text-secondary'
+      className='w-full md:w-1/2 pl-10 font-brand text-text-secondary'
     >
       <form action={formAction} className='flex flex-col gap-8 '>
         <div className='flex flex-row gap-5 w-full'>

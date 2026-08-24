@@ -12,10 +12,15 @@ export const es = {
     paragraph:
       'Creando experiencias frontend modernas con una arquitectura escalable, componentes reutilizables e interacciones pensadas para dar vida a las ideas.',
     viewProjects: 'Ver Proyectos',
-    contactMe: 'Contáctame'
+    contactMe: 'Contáctame',
+    availability: {
+      remote: 'Remoto · Worldwide | Basado en Argentina',
+      english: 'Inglés C1 · Certificado por EF SET'
+    }
   },
   projects: {
     title: 'Proyectos Personales',
+    next: 'Siguiente proyecto',
 
     items: {
       'vinyl-store': {
@@ -59,7 +64,8 @@ export const es = {
         description:
           'Un ecommerce moderno inspirado en un diseño de Figma, centrado en una interfaz responsive e interacciones fluidas.'
       }
-    }
+    },
+    vercel: 'Más proyectos en Vercel ↗'
   },
   techStack: {
     title: 'Stack Tecnológico',
@@ -73,7 +79,8 @@ export const es = {
     header: {
       eyebrow: 'Sobre mí',
       subtitle:
-        'Un camino de aprendizaje constante, decisiones con intención y construcción con propósito.'
+        'Un camino de aprendizaje constante, decisiones con intención y construcción con propósito.',
+      hours: 'horas de código, investigación y práctica'
     },
     timeline: {
       labels: {

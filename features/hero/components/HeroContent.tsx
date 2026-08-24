@@ -4,6 +4,8 @@ import Buttons from './Buttons'
 import SocialLinks from './SocialLinks'
 import { useRef } from 'react'
 import { useHeroAnimation } from '../animations/useHeroAnimation'
+import { TfiWorld } from 'react-icons/tfi'
+import { HiOutlineLanguage } from 'react-icons/hi2'
 
 const HeroContent = () => {
   const { t } = useTranslation()
@@ -14,6 +16,7 @@ const HeroContent = () => {
   const paragraph = useRef<HTMLParagraphElement>(null)
   const buttons = useRef<HTMLDivElement>(null)
   const social = useRef<HTMLDivElement>(null)
+  const availability = useRef<HTMLDivElement>(null)
 
   useHeroAnimation({
     container,
@@ -22,13 +25,14 @@ const HeroContent = () => {
     subtitle,
     paragraph,
     buttons,
-    social
+    social,
+    availability
   })
 
   return (
     <div
       ref={container}
-      className='hero-content flex w-1/3 flex-col justify-center pl-17 gap-6'
+      className='hero-content relative flex w-full md:w-1/3 flex-col justify-center pl-17 gap-6 mt-15'
     >
       <div className='flex flex-col gap-3'>
         <span
@@ -40,7 +44,7 @@ const HeroContent = () => {
 
         <h1
           ref={title}
-          className='font-display text-[100px] leading-[0.8] text-text-primary ml-1 tracking-wide mt-2'
+          className='font-display text-[90px] md:text-[100px] leading-[0.8] text-text-primary ml-1 tracking-wide mt-2'
         >
           Facundo
           <br />
@@ -57,12 +61,33 @@ const HeroContent = () => {
 
       <p
         ref={paragraph}
-        className='font-body text-text-secondary mb-5 tracking-wider leading-6 text-lg w-[540px]'
+        className='font-body text-text-secondary mb-5 tracking-wider leading-6 text-lg md:w-[540px]'
       >
         {t('hero.paragraph')}
       </p>
       <Buttons ref={buttons} />
       <SocialLinks ref={social} />
+      <div
+        ref={availability}
+        className='mt-5 flex flex-col gap-2 font-body text-xs uppercase tracking-[0.2em] text-text-secondary'
+      >
+        <div className='flex items-center gap-2'>
+          <TfiWorld className='text-gold' size={14} />
+          <span>{t('hero.availability.remote')}</span>
+        </div>
+
+        <div className='flex items-center gap-2'>
+          <HiOutlineLanguage className='text-gold' size={15} />
+          <a
+            href='https://cert.efset.org/en/jKYi9r'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='transition-colors duration-300 hover:text-gold'
+          >
+            {t('hero.availability.english')} ↗
+          </a>
+        </div>
+      </div>
     </div>
   )
 }

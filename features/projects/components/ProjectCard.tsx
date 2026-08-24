@@ -13,7 +13,7 @@ const ProjectCard = forwardRef<HTMLElement, Props>(({ project }, ref) => {
   return (
     <article
       ref={ref}
-      className='luxury-card group flex flex-col w-[440px] pt-3 mb-5'
+      className='luxury-card group flex w-full max-w-[440px] flex-col w-[440px] pt-3 mb-5'
     >
       <ProjectPreview project={project} text={text} />
 

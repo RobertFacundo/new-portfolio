@@ -8,7 +8,8 @@ export const useHeroAnimation = ({
   subtitle,
   paragraph,
   buttons,
-  social
+  social,
+  availability
 }: any) => {
   useGSAP(
     () => {
@@ -75,6 +76,16 @@ export const useHeroAnimation = ({
             opacity: 0,
             y: 30,
             duration: 1
+          },
+          '-=0.6'
+        )
+        .from(
+          availability.current,
+          {
+            opacity: 0,
+            y: 20,
+            duration: 0.8,
+            stagger: 0.08
           },
           '-=0.6'
         )
