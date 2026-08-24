@@ -2,19 +2,48 @@
 import { CONTACT_VALUES } from '@/shared/constants/contact'
 import Values from './Values'
 import { useTranslation } from '@/shared/i18n/useTranslations'
+import { useRef } from 'react'
+import { useLanguageTransition } from '@/shared/hooks/useLanguageTransition'
+import { useContactContentAnimation } from '../animations/useContactContentAnimation'
 
 const Content = () => {
   const { t } = useTranslation()
 
-  return (
-    <div className='flex flex-col gap-5 w-1/2 border-r border-gold/30 pr-10'>
-      <span className='luxury-title w-fit'>{t('contact.eyebrow')}</span>
+  const languageRefs = useRef<(HTMLElement | null)[]>([])
+  const containerRef = useRef<HTMLDivElement | null>(null)
 
-      <h1 className='mt-6 font-display text-5xl uppercase tracking-widest text-text-primary'>
+  useLanguageTransition({ refs: languageRefs })
+  useContactContentAnimation(containerRef)
+
+  return (
+    <div
+      ref={containerRef}
+      className='contact-container flex flex-col gap-5 w-1/2 border-r border-gold/30 pr-10'
+    >
+      <span
+        ref={el => {
+          languageRefs.current[0] = el
+        }}
+        className='luxury-title w-fit '
+      >
+        {t('contact.eyebrow')}
+      </span>
+
+      <h1
+        ref={el => {
+          languageRefs.current[1] = el
+        }}
+        className='mt-6 font-display text-5xl uppercase tracking-widest text-text-primary'
+      >
         {t('contact.title')}
       </h1>
 
-      <p className='mt-6 max-w-xl font-body text-lg leading-relaxed tracking-wide text-text-secondary'>
+      <p
+        ref={el => {
+          languageRefs.current[2] = el
+        }}
+        className='mt-6 max-w-xl font-body text-lg leading-relaxed tracking-wide text-text-secondary'
+      >
         {t('contact.paragraph')}
       </p>
 

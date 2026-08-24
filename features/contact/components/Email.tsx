@@ -6,8 +6,10 @@ import {
   sendContactEmail,
   type ContactState
 } from '../actions/sendContactEmail'
-import { useActionState } from 'react'
+import { useActionState, useRef } from 'react'
 import { useTranslation } from '@/shared/i18n/useTranslations'
+import { useLanguageTransition } from '@/shared/hooks/useLanguageTransition'
+import { useContactEmailAnimation } from '../animations/useContactEmailAnimations'
 
 const initialState: ContactState = {
   success: false
@@ -20,37 +22,81 @@ const Email = () => {
     initialState
   )
 
+  const languageRefs = useRef<(HTMLElement | null)[]>([])
+  const containerRef = useRef<HTMLDivElement | null>(null)
+
+  useLanguageTransition({ refs: languageRefs })
+  useContactEmailAnimation(containerRef)
+
   return (
-    <div className='w-1/2 pl-10 font-brand text-text-secondary'>
+    <div
+      ref={containerRef}
+      className='w-1/2 pl-10 font-brand text-text-secondary'
+    >
       <form action={formAction} className='flex flex-col gap-8 '>
         <div className='flex flex-row gap-5 w-full'>
           <div className='contact-field w-1/2'>
-            <label className='contact-label'> {t('contact.form.name')}</label>
+            <label
+              ref={el => {
+                languageRefs.current[0] = el
+              }}
+              className='contact-label'
+            >
+              {' '}
+              {t('contact.form.name')}
+            </label>
             <input name='name' className='contact-input' type='text' />
           </div>
 
           <div className='contact-field w-1/2'>
-            <label className='contact-label'> {t('contact.form.email')}</label>
+            <label
+              ref={el => {
+                languageRefs.current[1] = el
+              }}
+              className='contact-label'
+            >
+              {' '}
+              {t('contact.form.email')}
+            </label>
             <input name='email' className='contact-input' type='text' />
           </div>
         </div>
 
         <div className='contact-field'>
-          <label className='contact-label'> {t('contact.form.subject')}</label>
+          <label
+            ref={el => {
+              languageRefs.current[2] = el
+            }}
+            className='contact-label'
+          >
+            {' '}
+            {t('contact.form.subject')}
+          </label>
           <input name='subject' className='contact-input' type='text' />
         </div>
 
         <div className='contact-field'>
-          <label className='contact-label'>{t('contact.form.message')}</label>
+          <label
+            ref={el => {
+              languageRefs.current[3] = el
+            }}
+            className='contact-label'
+          >
+            {t('contact.form.message')}
+          </label>
           <textarea name='message' className='contact-textarea' rows={5} />
         </div>
 
         <button
           type='submit'
           disabled={isPending || state.success}
-          className='group flex items-center justify-center gap-3 luxury-button cursor-pointer text-gold disabled:cursor-default'
+          className='contact-submit group flex items-center justify-center gap-3 luxury-button cursor-pointer text-gold disabled:cursor-default'
         >
-          <span>
+          <span
+            ref={el => {
+              languageRefs.current[4] = el
+            }}
+          >
             {isPending
               ? t('contact.form.sending')
               : state.success
@@ -69,8 +115,14 @@ const Email = () => {
         </button>
       </form>
 
-      <div className='flex flex-row items-center gap-15 mt-5 pt-3 border-t border-gold/20'>
-        <span>{t('contact.direct')}</span>
+      <div className='contact-direct flex flex-row items-center gap-15 mt-5 pt-3 border-t border-gold/20'>
+        <span
+          ref={el => {
+            languageRefs.current[5] = el
+          }}
+        >
+          {t('contact.direct')}
+        </span>
 
         <div className='flex gap-6 items-center'>
           <a
