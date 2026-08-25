@@ -41,7 +41,7 @@ const Navigation = () => {
         <Links refs={languageRefs} />
 
         <a
-          href='/cv.pdf'
+          href='/Robert-CV.pdf'
           target='_blank'
           rel='noopener noreferrer'
           className='luxury-button font-brand group'
