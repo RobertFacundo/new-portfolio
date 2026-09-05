@@ -32,7 +32,7 @@ export const en = {
         type: 'Shopify Ecommerce',
         title: 'Bijou Shopify',
         description:
-          'A Shopify jewelry storefront built with Liquid and focused on modern ecommerce UX. Demo password: rob.'
+          'A Shopify jewelry storefront built with Liquid and focused on modern ecommerce UX. Demo password: rob'
       },
 
       'travel-landing': {
