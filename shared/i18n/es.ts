@@ -33,7 +33,7 @@ export const es = {
         type: 'Shopify Ecommerce',
         title: 'Bijou Shopify',
         description:
-          'Un storefront de joyería en Shopify, desarrollado con Liquid y enfocado en una experiencia de ecommerce moderna. Password: rob.'
+          'Un storefront de joyería en Shopify, desarrollado con Liquid y enfocado en una experiencia de ecommerce moderna. Password: rob'
       },
 
       'travel-landing': {
