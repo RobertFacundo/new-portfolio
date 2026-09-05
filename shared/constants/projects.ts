@@ -8,6 +8,21 @@ export const PROJECTS: Project[] = [
     github: 'https://github.com/RobertFacundo/vinylEcommerce',
     live: 'https://vinyl-ecommerce.vercel.app/'
   },
+  {
+    id: 'bijou-shopify',
+    image: '/images/projects/bijou.png',
+    techStack: [
+      'Shopify',
+      'Liquid',
+      'JavaScript',
+      'CSS',
+      'Shopify CLI',
+      'Cart API',
+      'Section Rendering API'
+    ],
+    github: 'https://github.com/RobertFacundo/shopify-practice',
+    live: 'https://jewelry-commerce-m3gtpdnw.myshopify.com/'
+  },
 
   {
     id: 'travel-landing',
@@ -31,6 +46,32 @@ export const PROJECTS: Project[] = [
     techStack: ['Next.js', 'TypeScript', 'Three.js', 'GSAP'],
     github: 'https://github.com/RobertFacundo/christmas-landing',
     live: 'https://christmas-landing-kappa.vercel.app/'
+  },
+  {
+    id: 'furniro-ecommerce',
+    image: '/images/projects/furniture.png',
+    techStack: [
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Framer Motion',
+      'Redux Toolkit'
+    ],
+    github: 'https://github.com/RobertFacundo/furnitureEcommerce',
+    live: 'https://furniture-ecommerce-azure.vercel.app/'
+  },
+  {
+    id: 'ecommerce-ui',
+    image: '/images/projects/figma-to-code.png',
+    techStack: [
+      'React',
+      'TypeScript',
+      'Redux Toolkit',
+      'Tailwind CSS',
+      'Framer Motion'
+    ],
+    github: 'https://github.com/RobertFacundo/figmaEcommerceUI',
+    live: 'https://figma-ecommerce-ui.vercel.app/'
   },
 
   {

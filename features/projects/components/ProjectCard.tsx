@@ -28,7 +28,7 @@ const ProjectCard = forwardRef<HTMLElement, Props>(({ project }, ref) => {
           </p>
         </div>
 
-        <div className='min-h-[70px] flex flex-wrap content-center gap-2 '>
+        <div className='min-h-[70px] flex flex-wrap content-center gap-2 mt-2'>
           {project.techStack.map(tech => (
             <span
               key={tech}

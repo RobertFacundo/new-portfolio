@@ -28,6 +28,12 @@ export const en = {
         description:
           'A modern ecommerce experience focused on immersive animations and smooth interactions.'
       },
+      'bijou-shopify': {
+        type: 'Shopify Ecommerce',
+        title: 'Bijou Shopify',
+        description:
+          'A Shopify jewelry storefront built with Liquid and focused on modern ecommerce UX. Demo password: rob.'
+      },
 
       'travel-landing': {
         type: 'Landing',
@@ -49,6 +55,18 @@ export const en = {
         description:
           'A cinematic Christmas experience combining storytelling, smooth animations, and atmospheric visuals.'
       },
+      'furniro-ecommerce': {
+        type: 'Figma To Code',
+        title: 'Furniro E-commerce',
+        description:
+          'A Figma-to-Code eCommerce interface built with React, focused on pixel-accurate UI and reusable components.'
+      },
+      'ecommerce-ui': {
+        type: 'E-commerce',
+        title: 'Ecommerce UI',
+        description:
+          'A Figma-to-Code ecommerce interface with a functional cart, Redux state management & responsive design.'
+      },
 
       'halloween-landing': {
         type: 'Landing',
@@ -58,7 +76,7 @@ export const en = {
       },
 
       'flower-delivery': {
-        type: 'E-commerce',
+        type: 'Figma To Code',
         title: 'Flower Delivery',
         description:
           'A modern ecommerce frontend inspired by a Figma design, focused on responsive UI and smooth interactions.'
