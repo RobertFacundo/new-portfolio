@@ -24,10 +24,16 @@ export const es = {
 
     items: {
       'vinyl-store': {
-        type: 'E-commerce',
+        type: 'Shopify',
         title: 'Vinyl Store',
         description:
           'Una experiencia moderna de comercio electrónico enfocada en animaciones inmersivas e interacciones fluidas.'
+      },
+      'bijou-shopify': {
+        type: 'Shopify Ecommerce',
+        title: 'Bijou Shopify',
+        description:
+          'Un storefront de joyería en Shopify, desarrollado con Liquid y enfocado en una experiencia de ecommerce moderna. Password: rob.'
       },
 
       'travel-landing': {
@@ -49,6 +55,18 @@ export const es = {
         title: 'Christmas Landing',
         description:
           'Una experiencia navideña cinematográfica combinando narrativa, animaciones y una atmósfera inmersiva.'
+      },
+      'furniro-ecommerce': {
+        type: 'Figma To Code',
+        title: 'Furniro E-commerce',
+        description:
+          'Una interfaz moderna de eCommerce implementada a partir de un diseño de Figma, enfocada en una UI pixel-perfect, componentes React reutilizables y experiencias interactivas.'
+      },
+      'ecommerce-ui': {
+        type: 'E-commerce',
+        title: 'Ecommerce UI',
+        description:
+          'Una interfaz moderna de ecommerce construida a partir de un diseño de Figma, con un carrito completamente funcional, gestión de estado con Redux, diseño responsive e interacciones fluidas.'
       },
 
       'halloween-landing': {

@@ -7,7 +7,7 @@ import { useTranslation } from '@/shared/i18n/useTranslations'
 import MobileProjectsSection from './components/MobileProjectsSection'
 
 const Projects = () => {
-  const [open, setOpen] = useState(false)
+  const [page, setPage] = useState(0)
   const titleRef = useRef<HTMLHeadingElement | null>(null)
   const projectsRef = useRef<HTMLDivElement | null>(null)
   const { t } = useTranslation()
@@ -17,16 +17,19 @@ const Projects = () => {
     projectsRef
   })
 
+  const handleToggle = () => {
+    setPage(prev => (prev + 1) % 3)
+  }
+
   return (
     <section id='projects' className='border-t border-gold/10 py-10  '>
       <SectionHeader
         ref={titleRef}
         title='Personal Projects'
-        open={open}
-        onToggle={() => setOpen(prev => !prev)}
+        onToggle={handleToggle}
       />
       <div className='hidden md:block'>
-        <ProjectsSection open={open} ref={projectsRef} />
+        <ProjectsSection page={page} ref={projectsRef} />
       </div>
 
       {/* Mobile */}

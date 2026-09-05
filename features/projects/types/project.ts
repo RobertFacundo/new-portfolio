@@ -5,6 +5,9 @@ export type ProjectId =
   | 'christmas-landing'
   | 'halloween-landing'
   | 'flower-delivery'
+  | 'bijou-shopify'
+  | 'furniro-ecommerce'
+  | 'ecommerce-ui'
 
 export interface Project {
   id: ProjectId
