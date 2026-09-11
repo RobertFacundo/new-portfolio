@@ -8,9 +8,9 @@ export const en = {
   },
   hero: {
     eyebrow: 'FRONTEND DEVELOPER',
-    subtitle: 'React • Next.js • TypeScript • Tailwind CSS',
+    subtitle: 'React • Next.js • TypeScript • Shopify • Tailwind CSS',
     paragraph:
-      'Building modern frontend experiences through scalable architecture, reusable components, and thoughtful interactions that bring ideas to life.',
+      'Building modern frontend experiences through scalable architecture, reusable components, and thoughtful interactions, with a focus on Shopify and e-commerce development.',
     viewProjects: 'View Projects',
     contactMe: 'Contact Me',
     availability: {

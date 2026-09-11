@@ -8,9 +8,9 @@ export const es = {
   },
   hero: {
     eyebrow: 'DESARROLLADOR FRONTEND',
-    subtitle: 'React • Next.js • TypeScript • Tailwind CSS',
+    subtitle: 'React • Next.js • TypeScript • Shopify • Tailwind CSS',
     paragraph:
-      'Creando experiencias frontend modernas con una arquitectura escalable, componentes reutilizables e interacciones pensadas para dar vida a las ideas.',
+      'Creando experiencias frontend modernas con una arquitectura escalable, componentes reutilizables e interacciones cuidadas, con foco en el desarrollo de Shopify y e-commerce.',
     viewProjects: 'Ver Proyectos',
     contactMe: 'Contáctame',
     availability: {
