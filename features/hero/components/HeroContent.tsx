@@ -32,7 +32,7 @@ const HeroContent = () => {
   return (
     <div
       ref={container}
-      className='hero-content relative flex w-full md:w-1/3 flex-col justify-center pl-17 gap-6 mt-15'
+      className='hero-content relative flex w-full md:w-1/3 flex-col justify-center md:pl-17 pl-7 gap-6 '
     >
       <div className='flex flex-col gap-3'>
         <span

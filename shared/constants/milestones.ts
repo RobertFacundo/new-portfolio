@@ -12,12 +12,17 @@ export const JOURNEY_MILESTONES: JourneyMilestone[] = [
   },
   {
     id: 'exploration',
-    progress: 41,
+    progress: 36,
     image: '/images/about/exploration.png'
   },
   {
     id: 'focus',
-    progress: 77,
+    progress: 57,
     image: '/images/about/dartboard.png'
+  },
+  {
+    id: 'specialization',
+    progress: 73,
+    image: '/images/about/specialization.png'
   }
 ]

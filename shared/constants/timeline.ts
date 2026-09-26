@@ -7,5 +7,5 @@ export const TIMELINE = {
   yBottom: 540,
 
   milestonePadding: 140,
-  milestonePaddingRight: 160
+  milestonePaddingRight: 130
 } as const
