@@ -128,6 +128,13 @@ export const es = {
           preview: 'Eligiendo frontend y perfeccionando mi oficio.',
           description:
             'Elegí una dirección. Mi camino se orientó hacia el desarrollo frontend, creando experiencias digitales cada vez más refinadas mientras me preparaba para entrar al mundo profesional.'
+        },
+        specialization: {
+          date: 'SEP 2026',
+          title: 'Especialización',
+          preview: 'Definiendo mi camino en Shopify.',
+          description:
+            'Después de completar varias entrevistas técnicas y technical tests de Shopify, decidí especializarme en desarrollo para Shopify y su ecosistema. Esto le dio a mi carrera una dirección más clara.'
         }
       }
     },

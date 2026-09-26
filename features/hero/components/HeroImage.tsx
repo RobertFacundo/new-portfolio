@@ -11,7 +11,7 @@ const HeroImage = () => {
   return (
     <div
       ref={imageRef}
-      className='relative hidden md:flex h-full w-full items-end justify-end pb-5 pr-9 overflow-hidden mb-9'
+      className='relative hidden md:flex h-full w-full items-end justify-end pb-5 pr-9 overflow-hidden mb-2 mt-15'
     >
       <Image
         src='/images/bg-hero.png'

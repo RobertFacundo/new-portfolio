@@ -127,6 +127,13 @@ export const en = {
           preview: 'Choosing frontend, refining my craft.',
           description:
             'I chose a direction. My journey shifted toward frontend development, creating increasingly refined digital experiences while preparing to enter the professional world.'
+        },
+        specialization: {
+          date: 'SEP 2026',
+          title: 'Specialization',
+          preview: 'Defining my path in Shopify.',
+          description:
+            'After completing several Shopify technical interviews and assessments, I decided to specialize in Shopify development and its ecosystem. This gave my career a clearer direction and a more focused professional path.'
         }
       }
     },

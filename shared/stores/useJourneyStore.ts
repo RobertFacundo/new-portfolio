@@ -6,7 +6,7 @@ interface JourneyState {
 }
 
 export const useJourneyStore = create<JourneyState>(set => ({
-  hoveredMilestoneId: 'focus',
+  hoveredMilestoneId: 'specialization',
   setHoveredMilestone: id => {
     set({ hoveredMilestoneId: id })
   }

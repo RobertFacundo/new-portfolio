@@ -14,7 +14,7 @@ const Hero = () => {
     <section
       ref={containerRef}
       id='hero'
-      className='flex h-screen items-center overflow-hidden opacity-0'
+      className='flex min-h-screen items-center overflow-hidden opacity-0'
     >
       <HeroContent />
       <HeroImage />

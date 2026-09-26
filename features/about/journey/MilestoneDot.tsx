@@ -24,7 +24,7 @@ const MilestoneDot = ({ id, x, y, position }: Props) => {
     <g
       transform={`translate(${x} ${y})`}
       onMouseEnter={() => setHoveredMilestoneId(id)}
-      onMouseLeave={() => setHoveredMilestoneId('focus')}
+      onMouseLeave={() => setHoveredMilestoneId('specialization')}
       cursor='pointer'
     >
       <circle cx='0' cy='0' r='22' fill='transparent' />

@@ -22,6 +22,7 @@ const MilestoneCards = () => {
             y={cardY}
             width={300}
             height={173}
+            pointerEvents='none'
           >
             <div className='h-full w-full py-3'>
               <MilestoneCard point={point} position={position} />
