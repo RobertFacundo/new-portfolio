@@ -18,6 +18,13 @@ export const sendContactEmail = async (
   const subject = formData.get('subject')?.toString() ?? ''
   const message = formData.get('message')?.toString() ?? ''
 
+  if (!name.trim() || !email.trim() || !subject.trim() || !message.trim()) {
+    return {
+      success: false,
+      error: 'Please fill in all fields.'
+    }
+  }
+
   try {
     const { error } = await resend.emails.send({
       from: 'Portfolio <onboarding@resend.dev>',
