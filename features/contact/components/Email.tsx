@@ -45,7 +45,7 @@ const Email = () => {
               {' '}
               {t('contact.form.name')}
             </label>
-            <input name='name' className='contact-input' type='text' />
+            <input name='name' className='contact-input' type='text' required />
           </div>
 
           <div className='contact-field w-1/2'>
@@ -58,7 +58,12 @@ const Email = () => {
               {' '}
               {t('contact.form.email')}
             </label>
-            <input name='email' className='contact-input' type='text' />
+            <input
+              name='email'
+              className='contact-input'
+              type='text'
+              required
+            />
           </div>
         </div>
 
@@ -86,6 +91,9 @@ const Email = () => {
           </label>
           <textarea name='message' className='contact-textarea' rows={5} />
         </div>
+        {state.error && (
+          <p className='text-red-400 text-sm mt-3'>{state.error}</p>
+        )}
 
         <button
           type='submit'
